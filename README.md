@@ -1,7 +1,7 @@
 # The Promised Offspring
 
 ![GitHub Release](https://img.shields.io/github/v/release/kreier/promised-offspring)
-![GitHub License](https://img.shields.io/github/license/kreier/promised-offpring)
+![GitHub License](https://img.shields.io/github/license/kreier/promised-offspring)
 
 Visualizing the lineage of Jesus, starting with Adam and connecting families and prophecies. Latest versions:
 
