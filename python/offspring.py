@@ -430,6 +430,7 @@ def create_people():
     print(f"Imported family tree of Jesus: {len(people)} text fields")
     pdf.set_line_width(1.0)
     pdf.set_draw_color(13, 155, 13)
+    print(f"Create lines for {len(married)} married couples.")
     for index, row in married.iterrows():
         x_1 = x_position(people.loc[people["key"] == row.husband, "column"].values[0])
         y_1 = y_position(people.loc[people["key"] == row.husband, "row"].values[0]) - 4
@@ -438,7 +439,9 @@ def create_people():
         pdf.line(x_1, y_1, x_2, y_2)
     pdf.set_line_width(0.3)
     pdf.set_draw_color(0)
+    print(f"Create lines for {len(children)} pairs of mother and child.")
     for index, row in children.iterrows():
+        # print(f"Parent: {row.parent}")
         x_1 = x_position(people.loc[people["key"] == row.parent, "column"].values[0]) + row.shift_parent
         y_1 = y_position(people.loc[people["key"] == row.parent, "row"].values[0]) + row.shift_y
         x_2 = x_position(people.loc[people["key"] == row.child, "column"].values[0])
@@ -449,6 +452,7 @@ def create_people():
         pdf.line(x_1, y_1 + 3, x_1, y_1)           # vertical line up to parent
     red  = color["terah_red"]
     blue = color["terah_blue"]
+    print("Now the people:")
     for index, row in people.iterrows():
         pdf.set_font(font_regular, "", 10)
         text_width = pdf.get_string_width(dict[row.key])
@@ -462,6 +466,7 @@ def create_people():
         if row.color == "red":
             pdf.set_text_color(red[0]*255, red[1]*255, red[2]*255)
         drawString(dict[row.key], 10, x, y, "c", False)
+        # print(f"Included {dict[row.key]}")
 
 def include_pictures():
     global font_regular, direction, pdf

@@ -1,31 +1,33 @@
-parent,child,shift_parent,shift_y,ver
-Eve,Seth,-3,0,0.1
-Eve,Abel,0,0,0.2
-Eve,Cain,3,0,0.2
-Sarah,Isaac,0,0,0.1
-Rebekah,Jacob,0,0,0.1
-Leah,Dinah,-9,-1,0.2
-Leah,Reuben,-6,0,0.1
-Leah,Simeon,-3,1,0.1
-Leah,Levi,0,0,0.1
-Leah,Issachar,3,1,0.1
-Leah,Zebulun,6,0,0.1
-Leah,Judah,9,-1,0.1
-Zilpah,Asher,-5,0,0.1
-Zilpah,Gad,5,0,0.1
-Bilhah,Naphtali,-5,0,0.1
-Bilhah,Dan,5,0,0.1
-Rahel,Joseph,5,0,0.1
-Rahel,Benjamin,-5,0,0.1
-Bathsheba,Solomon,5,0,0.1
-Bathsheba,Nathan,-5,0,0.1
-Seth,Abraham,0,0,0.1
-Judah,David,0,0,0.1
-Nathan,Shealtiel,0,0,0.1
-Abiud,Joseph4,0,0,0.1
-Rhesa,Mary,0,0,0.1
-Mary,Jesus,0,0,0.1
-Asenath,Manasseh,-3,0,0.2
-Asenath,Ephraim,0,0,0.2
-Solomon,Hezekiah,0,0,0.1
-Hephzinah,Manasseh2,0,0,0.2
+parent,child,shift_parent,shift_y,ver,notes
+Eve,Seth,-3,0,0.1,
+Eve,Abel,0,0,0.2,
+Eve,Cain,3,0,0.2,
+Sarah,Isaac,0,0,0.1,
+Rebekah,Jacob,0,0,0.1,
+Leah,Dinah,-9,-2,0.2,very cramped
+Leah,Reuben,-6,-1,0.1,
+Leah,Simeon,-3,0,0.1,
+Leah,Levi,0,1,0.1,
+Leah,Issachar,3,2,0.1,
+Leah,Zebulun,6,0,0.1,
+Leah,Judah,9,-1,0.1,
+Zilpah,Asher,-5,0,0.1,
+Zilpah,Gad,5,0,0.1,
+Bilhah,Naphtali,-5,0,0.1,
+Bilhah,Dan,5,0,0.1,
+Rahel,Joseph,5,0,0.1,
+Rahel,Benjamin,-5,0,0.1,
+Bathsheba,Solomon,5,0,0.1,
+Bathsheba,Nathan,-5,0,0.1,
+Seth,Abraham,0,0,0.1,vertical long
+Perez,David,0,0,0.1,vertical long
+Nathan,Shealtiel,0,0,0.1,vertical long
+Abiud,Joseph4,0,0,0.1,vertical long
+Rhesa,Mary,0,0,0.1,vertical long
+Mary,Jesus,0,0,0.1,
+Asenath,Manasseh,-3,0,0.2,
+Asenath,Ephraim,0,0,0.2,
+Jeconiah_Jehoiachin,Pedaiah,0,0,0.1,vertical long
+Hephzinah,Manasseh2,0,0,0.2,
+Tamar,Perez,0,0,0.3,
+Naamah,Rehoboam,0,0,0.3,
