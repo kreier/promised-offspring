@@ -21,13 +21,29 @@ Bathsheba,Solomon,5,0,0.1,
 Bathsheba,Nathan,-5,0,0.1,
 Seth,Abraham,0,0,0.1,vertical long
 Perez,David,0,0,0.1,vertical long
-Nathan,Shealtiel,0,0,0.1,vertical long
+Nathan,daughter_of_Neri,0,0,0.1,vertical long
 Abiud,Joseph4,0,0,0.1,vertical long
 Rhesa,Mary,0,0,0.1,vertical long
 Mary,Jesus,0,0,0.1,
 Asenath,Manasseh,-3,0,0.2,
 Asenath,Ephraim,0,0,0.2,
-Jeconiah_Jehoiachin,Pedaiah,0,0,0.1,vertical long
-Hephzinah,Manasseh2,0,0,0.2,
 Tamar,Perez,0,0,0.3,
 Naamah,Rehoboam,0,0,0.3,
+Maacah,Abijah,0,0,0.3,
+Azubah,Jehoshaphat,0,0,0.3,
+Athaliah,Ahaziah,0,0,0.3,
+Zibiah,Jehoash,0,0,0.3,
+Jehoaddan_Jehoaddin,Amaziah,0,0,0.3,
+Jecoliah,Uzziah_Azariah,0,0,0.3,
+Jerusha_Jerushah,Jotham,0,0,0.3,
+Abi_Abijah,Hezekiah,0,0,0.3,
+Hephzinah,Manasseh2,0,0,0.2,
+Meshullemeth,Amon,0,0,0.3,
+Jedidah,Josiah,0,0,0.3,
+Hamutal,Eliakim_Jehoiakim,0,0,0.3,
+Nehushta,Jeconiah_Jehoiachin,0,0,0.3,
+Jeconiah_Jehoiachin,Pedaiah,3,0,0.1,
+Jeconiah_Jehoiachin,Shealtiel,-3,0,0.3,
+Zerubbabel,Rhesa,-3,0,0.3,
+Zerubbabel,Abiud,3,0,0.3,
+daughter_of_Neri,Zerubbabel,0,0,0.3,
