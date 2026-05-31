@@ -452,7 +452,7 @@ def create_people():
         pdf.line(x_1, y_1 + 3, x_1, y_1)           # vertical line up to parent
     red  = color["terah_red"]
     blue = color["terah_blue"]
-    print("Now the people:")
+    print(f"Put on the names of {len(people)} people.")
     for index, row in people.iterrows():
         pdf.set_font(font_regular, "", 10)
         text_width = pdf.get_string_width(dict[row.key])
