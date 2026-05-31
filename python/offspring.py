@@ -7,7 +7,7 @@ import googletrans # it works again with v4.0.2 since 2024-11-20 that should fix
 import datetime, sys, os, asyncio, qrcode
 
 # Some general settings for this A3 version
-version  = 0.1
+version  = 0.3
 language = "en"
 language_str = "English"
 color_scheme = "normal"
@@ -16,7 +16,7 @@ border_lr    = 5*mm                       # space left/right usually 10, for rol
 border_tb    = 5*mm                       # space for the years top and bottom
 page_width   = 297*mm                     # A3 portrait
 page_height  = 420*mm    
-pdf_author   = "https://github.com/kreier/promised-seed"
+pdf_author   = "https://github.com/kreier/promised-offspring"
 fontsize_regular = 10
 fontsize_AMoses  = 16
 y_offset         = 0
@@ -138,7 +138,7 @@ def create_canvas():
     global left_to_right, direction, direction_rl, direction_factor, y_offset, replace_numerals
     global font_regular, font_bold, fontsize_regular, fontsize_AMoses
     print(f"Start creating document")
-    filename = "../render/promised-seed_v" + str(version) + "_"+ language + ".pdf"
+    filename = "../render/promised-offspring_v" + str(version) + "_"+ language + ".pdf"
     pdf = FPDF(unit="pt", format=(page_width, page_height))       # no orientation ="landscape" since it only swaps width and height
     pdf.set_margin(0)
     pdf.c_margin = 0
@@ -152,7 +152,7 @@ def create_canvas():
     pdf.set_title(dict['pdf_title'])
     pdf.set_subject(dict['pdf_subject'])
     pdf.set_producer("fpdf2 library 2.8.5 https://py-pdf.github.io/fpdf2/")
-    pdf.set_creator("Python https://github.com/kreier/promised-seed/python/seed.py")
+    pdf.set_creator("Python https://github.com/kreier/promised-offspring/python/offspring.py")
     drawing_width  = page_width - 2 * border_lr
     drawing_height = page_height - 2 * border_tb
     x1 = border_lr                                  # left for fpdf2 and reportlab
@@ -430,6 +430,7 @@ def create_people():
     print(f"Imported family tree of Jesus: {len(people)} text fields")
     pdf.set_line_width(1.0)
     pdf.set_draw_color(13, 155, 13)
+    print(f"Create lines for {len(married)} married couples.")
     for index, row in married.iterrows():
         x_1 = x_position(people.loc[people["key"] == row.husband, "column"].values[0])
         y_1 = y_position(people.loc[people["key"] == row.husband, "row"].values[0]) - 4
@@ -438,7 +439,9 @@ def create_people():
         pdf.line(x_1, y_1, x_2, y_2)
     pdf.set_line_width(0.3)
     pdf.set_draw_color(0)
+    print(f"Create lines for {len(children)} pairs of mother and child.")
     for index, row in children.iterrows():
+        # print(f"Parent: {row.parent}")
         x_1 = x_position(people.loc[people["key"] == row.parent, "column"].values[0]) + row.shift_parent
         y_1 = y_position(people.loc[people["key"] == row.parent, "row"].values[0]) + row.shift_y
         x_2 = x_position(people.loc[people["key"] == row.child, "column"].values[0])
@@ -449,6 +452,7 @@ def create_people():
         pdf.line(x_1, y_1 + 3, x_1, y_1)           # vertical line up to parent
     red  = color["terah_red"]
     blue = color["terah_blue"]
+    print(f"Put on the names of {len(people)} people.")
     for index, row in people.iterrows():
         pdf.set_font(font_regular, "", 10)
         text_width = pdf.get_string_width(dict[row.key])
@@ -462,6 +466,7 @@ def create_people():
         if row.color == "red":
             pdf.set_text_color(red[0]*255, red[1]*255, red[2]*255)
         drawString(dict[row.key], 10, x, y, "c", False)
+        # print(f"Included {dict[row.key]}")
 
 def include_pictures():
     global font_regular, direction, pdf
@@ -515,58 +520,6 @@ def include_pictures_svg():
     pdf.set_text_color(population_color[0]*255, population_color[1]*255, population_color[2]*255)
     drawString(dict["world_population"], 10, population_x, y_position(population_y) , direction, False)
 
-def create_daniel2():                   # reference image has dimensions 748 x 240
-    global font_regular, font_bold
-    left_x = -4026
-    shift_upward = 30*mm    
-    if version > 4.8:
-        left_x = -4075
-        shift_upward = 70*mm
-    d2_height = 96*mm
-    d2_width  = d2_height / 748 * 240
-    kingdoms = ["Babylon", "Medopersia", "Greece", "Rome", "Angloamerica"]
-    kingdom_x = [0, 0, 0, 0, 0]
-    years = ["607BCE", "", "539BCE", "537BCE", "", "331BCE", "", "63BCE", "70CE", "1914CE", "", ""] 
-    yearlines = [2, 3, 2, 2, 3]
-    current_yearline = 0
-    image_shift = int(dict["daniel2_shift"])
-    if daniel2_image == "_fiverr1":
-        kingdom_x = [0, 0, 0, 0, -15]
-    if daniel2_image == "_fiverr2":
-        kingdom_x = [10, 0, 0, 0, -10]
-    for index, kingdom in enumerate(kingdoms):
-        pdf.set_line_width(0.4)
-        co = color["daniel2"]
-        pdf.set_draw_color(co[0]*255, co[1]*255, co[2]*255)
-        y_line = y2 - shift_upward - d2_height * (0.91 - index * 0.212)
-        pdf.line(x_position(left_x+226) + image_shift + kingdom_x[index], y_line, x_position(left_x), y_line)
-        pdf.set_text_color(co[0]*255, co[1]*255, co[2]*255)
-        pdf.set_font(font_bold, "", 12)
-        drawString(dict[kingdom + "_c"], 12, x_position(left_x), y_line + 2, direction, False)
-        pdf.set_text_color(50)
-        pdf.set_font(font_regular, "", 8)
-        drawString(dict[kingdom], 8, x_position(left_x), y_line + 15.4, direction, False)
-        if years[current_yearline] != "":
-            current_yearstring = dict[years[current_yearline]]
-        pdf.set_font(font_regular, "", 6)
-        indentation = pdf.get_string_width(current_yearstring) + 3
-        for yearline in range(yearlines[index]):
-            yearstring = " "
-            if years[current_yearline] != "":
-                yearstring = dict[years[current_yearline]]
-            drawString(yearstring, 6, x_position(left_x), y_line + 25.2 + 8 * yearline, direction, False)
-            line_daniel2 = "daniel2_" + str(current_yearline+1)
-            drawString(dict[line_daniel2], 6, x_position(left_x) + indentation*direction_factor, y_line + 25.2 + 8 * yearline, direction, False)
-            current_yearline += 1
-    file_d2 = "../images/daniel2" + daniel2_image
-    # if daniel2_nwt:
-    #     file_d2 += "_nwt"
-    d2_x = x_position(left_x+176) + image_shift * direction_factor
-    if not left_to_right:
-        file_d2 += "_rtl"
-        d2_x -= d2_width
-    pdf.image(file_d2 + ".svg", x = d2_x, y = y2 - shift_upward - d2_height, w = d2_width , h = d2_height)
-
 def create_qr_code(qr_file, language):
     # Create QR code instance
     qr = qrcode.QRCode(
@@ -575,7 +528,7 @@ def create_qr_code(qr_file, language):
         box_size=8,
         border=1,
     )
-    url = f"https://kreier.github.io/seed/{language}.pdf"
+    url = f"https://kreier.github.io/promised-offspring/latest/{language}.pdf"
     qr.add_data(url)
     qr.make(fit=True)
 
@@ -594,14 +547,14 @@ def create_timestamp():
     if left_to_right:
         info_width = 0
     pdf.set_xy(x_position(0.07) - info_width, y2 - 6)
-    pdf.cell(text=f"The Promised Seed {version} – created {str(datetime.datetime.now())[0:16]} – ")
+    pdf.cell(text=f"The Promised Offspring {version} – created {str(datetime.datetime.now())[0:16]} – ")
     pdf.set_text_color(25, 25, 150)
-    pdf.cell(text=f"{pdf_author}", link="https://kreier.github.io/promised-seed/")
+    pdf.cell(text=f"{pdf_author}", link="https://kreier.github.io/promised-offspring/")
     pdf.set_text_color(50)
     pdf.cell(text=" – license: MIT")
 
     qr_file = "../images/qr-" + language + ".png"
-    qr_size = 15*mm
+    qr_size = 16*mm
     if not os.path.exists(qr_file):
         create_qr_code(qr_file, language)
     if left_to_right:
@@ -620,7 +573,7 @@ def create_timestamp():
         rotation_y += qr_size * 0.94
     with pdf.rotation(angle=rotation_angle, x=x_position(qr_x), y=rotation_y):
         pdf.set_xy(x_position(qr_x), y_position(qr_y + 0.2) + qr_size * (1.47 - 0.47 * direction_factor))
-        pdf.cell(text="promised-seed " + language)
+        pdf.cell(text="promised-offspring " + language)
         pdf.set_xy(x_position(qr_x), y_position(qr_y + 0.58) + qr_size * (1.47 - 0.47 * direction_factor))
         pdf.cell(text=dateindex)
     # And finally the name of this project into the top left corner
@@ -633,7 +586,7 @@ def render_to_file():
     pdf.output(filename)
     print(f"File exported: {filename}")
 
-def create_promised_seed(lang):
+def create_promised_offspring(lang):
     global language
     language = lang
     initiate_counters()
@@ -641,15 +594,9 @@ def create_promised_seed(lang):
     import_colors()
     create_canvas()
     create_border()
-    # create_adam_moses()
-    # create_reference_events()
-    # create_events_objects()
-    # create_judges()
-    # create_kings()
     create_people()
     # include_pictures()
     # include_pictures_svg()
-    # create_daniel2()
     create_timestamp()
     render_to_file()
 
@@ -703,7 +650,7 @@ def is_supported(language):
     df = df.fillna(" ")
     row_index = df[df['key'] == language].index   # creates array of matching entries with language string
     if len(row_index) == 0:
-        print(f"Your selected language '{language}' is not yet supported by this promised seed project.\n")
+        print(f"Your selected language '{language}' is not yet supported by this promised offspring project.\n")
         print(f"Let's check if the language code exists in Google Translate: ", end = "")
         isValid = checkForValidLanguageCode(language)
         if isValid:
@@ -725,10 +672,10 @@ def is_supported(language):
         return True
 
 if __name__ == "__main__":
-    print(f"The Promised Seed v{version}") # parameters are language, image Daniel 2 and 2025 edition
+    print(f"The Promised Offspring v{version}") # parameters are language, image Daniel 2 and 2025 edition
     if len(sys.argv) < 2:
-        print("You did not provide a language as argument. Put it as a parameter after fpdf2_6000.py")
+        print("You did not provide a language as argument. Put it as a parameter after offspring.py")
         exit()
     language = sys.argv[1]
     if is_supported(language):
-        create_promised_seed(language)
+        create_promised_offspring(language)
