@@ -7,7 +7,7 @@ import googletrans # it works again with v4.0.2 since 2024-11-20 that should fix
 import datetime, sys, os, asyncio, qrcode
 
 # Some general settings for this A3 version
-version  = 0.3
+version  = 0.4
 language = "en"
 language_str = "English"
 color_scheme = "normal"
