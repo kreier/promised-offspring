@@ -76,3 +76,18 @@ The project above has 10 lines Adam-Moses, then 10 lines to Abraham, and 11 (4) 
 ### May 2026 - renamed to "promised-offspring"
 
 The Hebrew word used for **seed** can also mean **offspring**. But in English the word "seed" is no longer used for humans, similar in German. It appears in many verses (Genesis 1:11; 22:17; 48:4; Matthew 22:24; John 8:37 and the Edenic promise Genesis 3:15) and would be better translated as offpring. See also [Appendix A2](https://www.jw.org/en/library/bible/study-bible/appendix-a/nwt-revision-features/). So the project name changed, and the content inside was updated.
+
+### June 2026
+
+Planned updates:
+
+- more space between Jacob's family and his children
+- Rahab and Ruth included
+- Judges at the height of Salma to Obed/Jesse
+- dotted line for distant relationships
+- red/purple line of Aarons descendants as levites/priests to the first century
+
+### Additional content from the reference map
+
+- Chart of contemporary ages: Adam to Joseph with Jacob moving to Egypt at the age of 130: 34 lines, 144 mm
+- Kings and Prophets from the division of the kingdom 997 BCE to Malachi 443 BCE: 61 lines, 258 mm
