@@ -1,2 +1,13 @@
 parent,child,shift_parent,shift_y,ver,notes
-Issachar,Tola,0,0,0.4,6th judge
+Hezron,Othniel,-4,-1,0.4,from Judah (1)
+Benjamin,Ehud,0,0,0.4,from Benjamin (2)
+Naphtali,Schamgar,3,0,0.4,from Naphtali (3)
+Naphtali,Barak,-3,0,0.4,from Naphtali (4)
+Manasseh,Gideon,2,0,0.4,from Manasseh (5)
+Issachar,Tola,0,0,0.4,from Issachar (6)
+Hezron,Jair,-2,1,0.4,from Juda (7)
+Manasseh,Jephthah,-3,0,0.4,from Manasseh (8)
+Zebulun,Ibzan,3,0,0.4,from Zebulon (9)
+Zebulun,Elon,-3,0,0.4,from Zebulon (10)
+Ephraim,Abdon,0,0,0.4,from Ephraim (11)
+Dan,Samson,0,0,0.4,from Dan (12)

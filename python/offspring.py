@@ -317,9 +317,9 @@ def create_people():
     for index, row in married.iterrows():
         # print(f"Married couple: {row.husband} and {row.wife}")
         x_1 = x_position(people.loc[people["key"] == row.husband, "column"].values[0])
-        y_1 = y_position(people.loc[people["key"] == row.husband, "row"].values[0]) - 4
+        y_1 = y_position(people.loc[people["key"] == row.husband, "row"].values[0]) - 4.4
         x_2 = x_position(people.loc[people["key"] == row.wife, "column"].values[0])
-        y_2 = y_position(people.loc[people["key"] == row.wife, "row"].values[0]) - 4
+        y_2 = y_position(people.loc[people["key"] == row.wife, "row"].values[0]) - 4.4
         pdf.line(x_1, y_1, x_2, y_2)
     pdf.set_line_width(0.3)
     pdf.set_draw_color(0)
@@ -347,7 +347,7 @@ def create_people():
         pdf.line(x_1, y_1 + 3, x_1, y_1)           # vertical line up to parent
     red   = color["red"]
     blue  = color["blue"]
-    green = color["green"]
+    byzantium = color["byzantium"]
     print(f"Put on the names of {len(people)} people.")
     for index, row in people.iterrows():
         pdf.set_font(font_regular, "", 10)
@@ -361,10 +361,20 @@ def create_people():
         pdf.set_text_color(blue[0], blue[1], blue[2])
         if row.color == "red":
             pdf.set_text_color(red[0], red[1], red[2])
-        if row.color == "green":
-            pdf.set_text_color(green[0], green[1], green[2])
+        if row.color == "byzantium":
+            pdf.set_text_color(byzantium[0], byzantium[1], byzantium[2])
         drawString(dict[row.key], 10, x, y, "c", False)
         # print(f"Included {dict[row.key]}")
+        # write superscript and subscript to the left of the name, if applicable
+        if pd.isna(row.sup_l) == False:
+            drawString(str(int(row.sup_l)), 4, x - 0.5 * text_width - 1, y + 0.7, "l", False)
+        if pd.isna(row.sub_l) == False:
+            drawString(str(int(row.sub_l)), 4, x - 0.5 * text_width - 1, y + 4.7, "l", False)
+        # write superscript and subscript to the right of the name, if applicable
+        if pd.isna(row.sup_r) == False:
+            drawString(str(int(row.sup_r)), 4, x + 0.5 * text_width + 1, y + 0.7, "r", False)
+        if pd.isna(row.sub_r) == False:
+            drawString(str(int(row.sub_r)), 4, x + 0.5 * text_width, y + 4.7, "r", False)
 
 def include_pictures():
     global font_regular, direction, pdf
