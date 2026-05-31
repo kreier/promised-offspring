@@ -34,13 +34,13 @@ The account of Luke lists 75 individuals. If we put each father in one line, we 
 | Zerubbabel - Jesus |  20  |    11   |    20    |   11  |  11  |  20  |
 | sum                |  75  |    40   |    75    |   64  |  65  |  112 |
 
-Matthew only begins with Abraham and describes the paternal or legal side of Jesus lineage. It includes many kings of Judah and has in total 40 persons. The account of Luke starts with Adan and has therefore 20 more names. From Zerubbabel the lineage is significantly longer (20 instead of 11 individuals) and concludes after 75 generations. Another project includes many more extra lines for other children and relatives. This requires an estimated 112 lines for all the information.
+Matthew only begins with Abraham and describes the paternal or legal side of Jesus lineage. It includes many kings of Judah and has in total 40 persons. The account of Luke starts with Adam and has therefore 20 more names. From Zerubbabel the lineage is significantly longer (20 instead of 11 individuals) and concludes after 75 generations. Another project includes many more extra lines for other children and relatives. This requires an estimated 112 lines for all the information.
 
 One point is 0.3528 millimeter large. 12 points equals 4.23 millimeter and 75 lines require 317.52 millimeter. A4 portrait has a height of 297 mm, A3 has 420 mm.
 
 ### Extra space for parent - children lines
 
-I want some extra lines connecting parents to their childen, and 12 pt line height is too cramped. I decided to increase the line height to 14 pt. The results can be found in this table:
+I want to include some extra lines to connect parents to their childen. With just 12 pt line height this would be to cramped. I decided to increase the line height to 14 pt. The results can be found in this table:
 
 | number of   lines |  10 pt |  12 pt |  14 pt |  16 pt |
 |:-----------------:|:------:|:------:|:------:|:------:|
@@ -49,7 +49,8 @@ I want some extra lines connecting parents to their childen, and 12 pt line heig
 |         75        | 264.60 | 317.52 | 370.44 | 423.36 |
 |         85        | 299.88 | 359.86 | 419.83 | 479.81 |
 |        112        | 395.14 | 474.16 | 553.19 | 632.22 |
-|        1 pt       | 0.3528 | 0.3528 | 0.3528 | 0.3528 |
+
+The new 14 pt line height is good for 85 lines. But we need only 75 for the geneaology of the promised offspring. This leaves room to move content further down if I want to insert some interesting details.
 
 ## History of this "The Promised Seed" repository
 
@@ -91,3 +92,9 @@ Planned updates:
 
 - Chart of contemporary ages: Adam to Joseph with Jacob moving to Egypt at the age of 130: 34 lines, 144 mm
 - Kings and Prophets from the division of the kingdom 997 BCE to Malachi 443 BCE: 61 lines, 258 mm
+
+### Current size
+
+The large A0 project from 2005 was mentioned above. With a double-sided A3 paper I have the area of A2, only 25% of the 2005 project. But I got the lineage of Jesus in, all 12 tribes and 12 judges, many woman in the geneaology and the line of high priests. The entire content of the right column fits on the backside. Even when printed out in only 70% on A4 the information is still good readable. In comparison, it would look like this:
+
+<img src="history/latest.jpg" width="20%"><img src="history/promised_seed_2005.png" width="58%"><img src="history/2026-06-01_promised_seed_page2.png" width="20%">
