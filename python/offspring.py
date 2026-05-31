@@ -7,7 +7,7 @@ import googletrans # it works again with v4.0.2 since 2024-11-20 that should fix
 import datetime, sys, os, asyncio, qrcode
 
 # Some general settings for this A3 version
-version  = 0.3
+version  = 0.4
 language = "en"
 language_str = "English"
 color_scheme = "normal"
@@ -424,14 +424,17 @@ def create_people():
     file_people   = "../db/people.csv"
     file_married  = "../db/married.csv"
     file_children = "../db/children.csv"
-    people   = pd.read_csv(file_people, encoding='utf8')      # text in blue and red on white boxes
+    file_distant_children = "../db/children_distant.csv"
+    people   = pd.read_csv(file_people, encoding='utf8')     # text in blue and red on white boxes
     married  = pd.read_csv(file_married, encoding='utf8')    # married couples connected with a green line
-    children = pd.read_csv(file_children, encoding='utf8')  # children connected to parents with black lines
+    children = pd.read_csv(file_children, encoding='utf8')   # children connected to parents with black lines
+    distant_children = pd.read_csv(file_distant_children, encoding='utf8')  # distant children connected to parents with gray lines
     print(f"Imported family tree of Jesus: {len(people)} text fields")
     pdf.set_line_width(1.0)
     pdf.set_draw_color(13, 155, 13)
     print(f"Create lines for {len(married)} married couples.")
     for index, row in married.iterrows():
+        # print(f"Married couple: {row.husband} and {row.wife}")
         x_1 = x_position(people.loc[people["key"] == row.husband, "column"].values[0])
         y_1 = y_position(people.loc[people["key"] == row.husband, "row"].values[0]) - 4
         x_2 = x_position(people.loc[people["key"] == row.wife, "column"].values[0])
@@ -441,7 +444,7 @@ def create_people():
     pdf.set_draw_color(0)
     print(f"Create lines for {len(children)} pairs of mother and child.")
     for index, row in children.iterrows():
-        # print(f"Parent: {row.parent}")
+        # print(f"Relation: parent {row.parent} and child {row.child}.")
         x_1 = x_position(people.loc[people["key"] == row.parent, "column"].values[0]) + row.shift_parent
         y_1 = y_position(people.loc[people["key"] == row.parent, "row"].values[0]) + row.shift_y
         x_2 = x_position(people.loc[people["key"] == row.child, "column"].values[0])
@@ -450,8 +453,20 @@ def create_people():
             pdf.line(x_1, y_1 + 3, x_2, y_1 + 3)   # horizontal line from parent to child
         pdf.line(x_2, y_1 + 3, x_2, y_2)           # vertical line down to child
         pdf.line(x_1, y_1 + 3, x_1, y_1)           # vertical line up to parent
-    red  = color["terah_red"]
-    blue = color["terah_blue"]
+    for index, row in distant_children.iterrows():
+        print(f"Relation: parent {row.parent} and distant child {row.child}.")
+        x_1 = x_position(people.loc[people["key"] == row.parent, "column"].values[0]) + row.shift_parent
+        y_1 = y_position(people.loc[people["key"] == row.parent, "row"].values[0]) + row.shift_y
+        x_2 = x_position(people.loc[people["key"] == row.child, "column"].values[0])
+        y_2 = y_position(people.loc[people["key"] == row.child, "row"].values[0])
+        pdf.set_dash_pattern(dash=1, gap=2)  # dashed line for distant children
+        if x_1 != x_2:
+            pdf.line(x_1, y_1 + 3, x_2, y_1 + 3)   # horizontal line from parent to child
+        pdf.line(x_2, y_1 + 3, x_2, y_2)           # vertical line down to child
+        pdf.line(x_1, y_1 + 3, x_1, y_1)           # vertical line up to parent
+    red   = color["terah_red"]
+    blue  = color["terah_blue"]
+    green = color["terah_green"]
     print(f"Put on the names of {len(people)} people.")
     for index, row in people.iterrows():
         pdf.set_font(font_regular, "", 10)
@@ -465,6 +480,8 @@ def create_people():
         pdf.set_text_color(blue[0]*255, blue[1]*255, blue[2]*255)
         if row.color == "red":
             pdf.set_text_color(red[0]*255, red[1]*255, red[2]*255)
+        if row.color == "green":
+            pdf.set_text_color(green[0]*255, green[1]*255, green[2]*255)
         drawString(dict[row.key], 10, x, y, "c", False)
         # print(f"Included {dict[row.key]}")
 

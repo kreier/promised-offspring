@@ -5,14 +5,14 @@
 
 Visualizing the lineage of Jesus, starting with Adam and connecting families and prophecies. Latest versions:
 
-- [English version](render/promised-offspring_en.pdf)
-- [German version](render/promised-offspring_de.pdf)
+- [English version](latest/en.pdf)
+- [German version](latest/de.pdf)
 
 ## Motivation
 
 For people of Israel 2000 years ago it was of big importance to trace their family back in a genealogy. This was important to have a part in inherited land, or enjoy certain privileges. For example, after the exile in Babylon the families of _Habaiah_, _Hakkoz_, and _Barzillai_ who could not find their genealogical records. (Ezra 2:61-63, Nehemiah 7:63-65) Because they could not prove their lineage, they were excluded from the priesthood and forbidden to eat the sacred food until a priest could determine their status using the Urim and Thummim.
 
-<img src="history/1x1.png" width="5%"><img src="history/2025-11-30_promised-seed_v0.1.jpg" width="40%"><img src="history/1x1.png" width="5%"> <img src="history/promised_seed_2005.png" width="44%">
+<img src="history/1x1.png" width="5%"><img src="history/latest.jpg" width="40%"><img src="history/1x1.png" width="5%"> <img src="history/promised_seed_2005.png" width="44%">
 
 Of even greater importance was the lineage of the promised Messiah. He needed to be a son of Abraham, Judah and David. Therefore both Matthew and Luke include a geneaology of Jesus Christ. But if you look at them, you will find some differences. The more details one unveils, the more interesting and connected to world history this lineage becomes. Hence this project to condense and visualize some findings of this study. But first we have to think about size:
 
@@ -76,3 +76,18 @@ The project above has 10 lines Adam-Moses, then 10 lines to Abraham, and 11 (4) 
 ### May 2026 - renamed to "promised-offspring"
 
 The Hebrew word used for **seed** can also mean **offspring**. But in English the word "seed" is no longer used for humans, similar in German. It appears in many verses (Genesis 1:11; 22:17; 48:4; Matthew 22:24; John 8:37 and the Edenic promise Genesis 3:15) and would be better translated as offpring. See also [Appendix A2](https://www.jw.org/en/library/bible/study-bible/appendix-a/nwt-revision-features/). So the project name changed, and the content inside was updated.
+
+### June 2026
+
+Planned updates:
+
+- more space between Jacob's family and his children
+- Rahab and Ruth included
+- Judges at the height of Salma to Obed/Jesse
+- dotted line for distant relationships
+- red/purple line of Aarons descendants as levites/priests to the first century
+
+### Additional content from the reference map
+
+- Chart of contemporary ages: Adam to Joseph with Jacob moving to Egypt at the age of 130: 34 lines, 144 mm
+- Kings and Prophets from the division of the kingdom 997 BCE to Malachi 443 BCE: 61 lines, 258 mm
