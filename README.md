@@ -78,14 +78,16 @@ The project above has 10 lines Adam-Moses, then 10 lines to Abraham, and 11 (4) 
 
 The Hebrew word used for **seed** can also mean **offspring**. But in English the word "seed" is no longer used for humans, similar in German. It appears in many verses (Genesis 1:11; 22:17; 48:4; Matthew 22:24; John 8:37 and the Edenic promise Genesis 3:15) and would be better translated as offpring. See also [Appendix A2](https://www.jw.org/en/library/bible/study-bible/appendix-a/nwt-revision-features/). So the project name changed, and the content inside was updated.
 
+### Current size
+
+The large A0 project from 2005 was mentioned above. With a double-sided A3 paper I have the area of A2, only 25% of the 2005 project. But I got the lineage of Jesus in, all 12 tribes and 12 judges, many woman in the geneaology and the line of high priests. The entire content of the right column fits on the backside. Even when printed out in only 70% on A4 the information is still good readable. In comparison, it would look like this:
+
+<img src="history/latest.jpg" width="20%"><img src="history/promised_seed_2005.png" width="58%"><img src="history/2026-06-01_promised_seed_page2.png" width="20%">
+
 ### June 2026
 
 Planned updates:
 
-- more space between Jacob's family and his children
-- Rahab and Ruth included
-- Judges at the height of Salma to Obed/Jesse
-- dotted line for distant relationships
 - red/purple line of Aarons descendants as levites/priests to the first century
 
 ### Additional content from the reference map
@@ -93,8 +95,30 @@ Planned updates:
 - Chart of contemporary ages: Adam to Joseph with Jacob moving to Egypt at the age of 130: 34 lines, 144 mm
 - Kings and Prophets from the division of the kingdom 997 BCE to Malachi 443 BCE: 61 lines, 258 mm
 
-### Current size
+### Page 2
 
-The large A0 project from 2005 was mentioned above. With a double-sided A3 paper I have the area of A2, only 25% of the 2005 project. But I got the lineage of Jesus in, all 12 tribes and 12 judges, many woman in the geneaology and the line of high priests. The entire content of the right column fits on the backside. Even when printed out in only 70% on A4 the information is still good readable. In comparison, it would look like this:
+The current placeholder splits page 2 in a left and right section. It is good readable in A4 and the fontsize appears to be larger that page 1. In 2025/11/29 I changed to 14 pt line height while maintaining a reference 10pt font. This gives 85 lines.
 
-<img src="history/latest.jpg" width="20%"><img src="history/promised_seed_2005.png" width="58%"><img src="history/2026-06-01_promised_seed_page2.png" width="20%">
+#### Left: 4026 - 1473 BCE
+
+- 12 time specific times, bold year with left indentation
+- 6 red lines where the offspring was in danger
+- 7 blue lines for covenants
+- 4 + 10 + 4 + 7 + 6 + 3 + 3 + 4 + 7 + 3 = 51 lines for text
+- total 76 lines
+
+If limited to 1513 BCE it will be 13 lines less, only 63 lines.
+
+#### Right: 1473 BCE - 36 CE
+
+- 23 time specific times, bold year with left indentation (+1)
+- 9 red lines where the offspring was in danger
+- 5 blue lines for covenants (+2)
+- 1 + 4 + 7 + 2 + 4 + 5 + 5 + 4 + 4 + 4 = 40 lines for text (+10)
+- total 77 lines
+
+If extended back to 1513 BCE it will have 13 lines more, total 90 lines. Calculation: 24 + 9 + 7 = 40 lines with 14 pt plus 50 lines with 12 pt (text) equals a height of 560 pt + 600 pt = 1160 pt = 409.25 mm. 1 pt = 0.3528 mm. This would fit. The line values just have to be entered in 0.85 line height increments for 12 pt instead of the standard 14 pt.
+
+But for simplicity I could assume the 50 lines with 12 pt as being 90% of the 14 pt lines. That would be 12.6 pt or 630 pt in total. With the 14 pt that's 1190 pt or 419.8mm. It still fits.
+
+What happens to left? That's 11 + 6 + 5 = 22 lines with 14 pt plus 41 with 12 pt for combined 264 + 492 = 756 pt = 266.7 mm. 150 mm space for other content.
