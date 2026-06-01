@@ -7,7 +7,7 @@ import googletrans # it works again with v4.0.2 since 2024-11-20 that should fix
 import datetime, sys, os, asyncio, qrcode
 
 # Some general settings for this A3 version
-version  = 0.4
+version  = 0.5
 language = "en"
 language_str = "English"
 color_scheme = "normal"
@@ -265,31 +265,6 @@ def create_events_objects():
         draw_event(row.key, row.date, row.y_start, row.y_end, row.y_text, row.width, row.position)
         counter_objects += 1
 
-def create_judges():
-    global counter_judges, fontsize_regular
-    judges = pd.read_csv("../db/judges.csv", encoding='utf8')
-    print("Imported data of judges:", len(judges))
-    for index, row in judges.iterrows():
-        start = row.start
-        end   = row.end
-        x_box = x_position(start)
-        y_box = y_position(row.row_y) - 13
-        x_boxwidth = x_position(end) - x_position(start)
-        pdf.set_line_width(0.2)
-        pdf.set_draw_color(0)
-        co = color['judges']
-        pdf.set_fill_color(co[0]*255, co[1]*255, co[2]*255)
-        pdf.rect(x_box, y_box, x_boxwidth, 2, style="FD")           # peaceful period afterwards
-        oppression   = row.oppression
-        x_oppression = x_position(start - oppression)
-        x_opp_width  = x_box - x_oppression
-        co = color['oppression']
-        pdf.set_fill_color(co[0]*255, co[1]*255, co[2]*255)
-        pdf.rect(x_oppression, y_box, x_opp_width, 2, style="FD")   # years of opression before
-        judge = dict[row.key]
-        drawString(judge, fontsize_regular, x_box + x_boxwidth * 0.5 , y_box + 4, "c", True)
-        counter_judges += 1
-
 
 def faded_color(red, green, blue, percent):
     return [1 - percent * (1 - red), 1 - percent * (1 - green), 1 - percent * (1 - blue)]
@@ -320,100 +295,6 @@ def text_with_timebar(text, row, year_start, year_end, R, G, B, exact):
 
 
 
-def create_objects():
-    global counter_objects
-    objects = pd.read_csv("../db/objects.csv", encoding='utf8')
-    print("Imported data of objects or items:", len(objects))
-    cunei = ["gilgamesh", "ur3", "hammurabi"]
-    co = color['objects']
-    for index, row in objects.iterrows():
-        if row.key in cunei:
-            x_boxwidth = x_position(row.end) - x_position(row.start)
-            timebar(x_position(row.start), y_position(row.row_y) - 15, x_boxwidth, co[0], co[1], co[2], False)
-            pdf.set_font("NotoCuneiform", "", 9)
-            pdf.set_fill_color(0)
-            shift = pdf.get_string_width(dict[row.key])
-            if left_to_right:
-                shift = 0
-            pdf.set_xy(x_position(row.start) - shift , y_position(row.row_y) - 8)
-            pdf.cell(text=dict[row.key])
-            pdf.set_font(font_regular, "", fontsize_regular)
-        else:
-            text_with_timebar(dict[row.key], row.row_y, row.start, row.end, co[0], co[1], co[2], False)
-            counter_objects += 1
-
-def create_periods():
-    global counter_periods, fontsize_regular, render_type
-    # Import the perios with start and end as pandas dataframe
-    periods = pd.read_csv("../db/periods.csv", encoding='utf8')
-    print("Imported data of periods:", len(periods))
-    pdf.set_font(font_regular, "", 10)
-    for index, row in periods.iterrows():
-        detail_c = detail = ""
-        start = row.start
-        end   = row.end
-        key   = row.key
-        x_box = x_position(start)
-        y_box = y_position(row.row_y) - 9
-        special_language = {"ilo", "kne"}                 # move maya postclassic one lower
-        if language in special_language and key == "maya_postclassic":
-            y_box = y_position(row.row_y + 1) - 9
-        if edition_2025 and row.key == "millenium":       # change for edition_2025
-            y_box = y_position(row.row_y - 14) - 9
-        # x_boxwidth = (end - start) * dots_year
-        x_boxwidth = x_position(end) - x_position(start)
-        if row.key == "millenium" and render_type == "print":
-            x_boxwidth = x_position(end + 230) - x_position(start) 
-        co = color[f"{row.key}"]
-        pdf.set_fill_color(co[0]*255, co[1]*255, co[2]*255)
-        pdf.set_line_width(0.3)
-        pdf.set_draw_color(0)
-        if row.end_fade > row.end or row.start_fade < row.start:
-            pdf.set_line_width(0.0)
-            pdf.set_draw_color(1)
-        shift = direction_factor
-        stil = "F"
-        if row.border:
-            stil = "DF"
-        pdf.rect(x_box, y_box - 1, x_boxwidth, 12, style=stil)
-        if row.end_fade > row.end:                                              # fade end
-            fade_width = x_position(row.end_fade) - x_position(row.end)
-            x_boxwidth += fade_width
-            fade_steps = 50
-            for i in range(fade_steps):
-                cl = faded_color(co[0], co[1], co[2], (i+1)/fade_steps)
-                pdf.set_fill_color(cl[0]*255, cl[1]*255, cl[2]*255)
-                pdf.rect(x_box + x_boxwidth - fade_width * (i+1)/fade_steps - 0.2 * shift, y_box - 1, fade_width / 45, 12, style="F")
-        if row.start_fade < row.start:                                          # fade start
-            fade_width = x_position(row.start) - x_position(row.start_fade)
-            x_boxwidth += fade_width
-            x_box = x_position(row.start_fade)
-            fade_steps = 50
-            for i in range(fade_steps):
-                cl = faded_color(co[0], co[1], co[2], (i+1)/fade_steps)
-                pdf.set_fill_color(cl[0]*255, cl[1]*255, cl[2]*255)
-                pdf.rect(x_box + fade_width * i/fade_steps + 0.2 * shift, y_box - 1, fade_width / 45, 12, style="F")
-        if len(row.text_center) > 1:
-            detail_c = dict[row.text_center]
-            textsize = fontsize_regular
-            pdf.set_font(font_bold, "", textsize)
-            pdf.set_text_color(255)
-            while pdf.get_string_width(detail_c) > abs(x_boxwidth) and textsize > 4:
-                textsize -= 1
-                pdf.set_font(font_bold, "", textsize)
-                print(textsize, " ", detail_c)
-            drawString(detail_c, textsize, x_box + x_boxwidth * 0.5, y_box, "c", True)
-        detail = dict[key]
-        # y_box -= 8
-        pdf.set_text_color(0)
-        pdf.set_font(font_regular, "", fontsize_regular)
-        if row.location_description == "l":
-            drawString(detail, fontsize_regular, x_box - 2 * direction_factor, y_box , direction_rl, True)
-        else:
-            drawString(detail, fontsize_regular, x_box + x_boxwidth + 2*direction_factor, y_box, direction, True)
-        counter_periods += 1
-
-
 
 
 
@@ -436,9 +317,9 @@ def create_people():
     for index, row in married.iterrows():
         # print(f"Married couple: {row.husband} and {row.wife}")
         x_1 = x_position(people.loc[people["key"] == row.husband, "column"].values[0])
-        y_1 = y_position(people.loc[people["key"] == row.husband, "row"].values[0]) - 4
+        y_1 = y_position(people.loc[people["key"] == row.husband, "row"].values[0]) - 4.4
         x_2 = x_position(people.loc[people["key"] == row.wife, "column"].values[0])
-        y_2 = y_position(people.loc[people["key"] == row.wife, "row"].values[0]) - 4
+        y_2 = y_position(people.loc[people["key"] == row.wife, "row"].values[0]) - 4.4
         pdf.line(x_1, y_1, x_2, y_2)
     pdf.set_line_width(0.3)
     pdf.set_draw_color(0)
@@ -450,23 +331,23 @@ def create_people():
         x_2 = x_position(people.loc[people["key"] == row.child, "column"].values[0])
         y_2 = y_position(people.loc[people["key"] == row.child, "row"].values[0])
         if x_1 != x_2:
-            pdf.line(x_1, y_1 + 3, x_2, y_1 + 3)   # horizontal line from parent to child
-        pdf.line(x_2, y_1 + 3, x_2, y_2)           # vertical line down to child
-        pdf.line(x_1, y_1 + 3, x_1, y_1)           # vertical line up to parent
+            pdf.line(x_1, y_1 + 3, x_2, y_1 + 3)       # horizontal line from parent to child
+        pdf.line(x_2, y_1 + 3, x_2, y_2)               # vertical line down to child
+        pdf.line(x_1, y_1 + 3, x_1, y_1 - row.shift_y) # vertical line up to parent
     for index, row in distant_children.iterrows():
-        print(f"Relation: parent {row.parent} and distant child {row.child}.")
+        # print(f"Relation: parent {row.parent} and distant child {row.child}.")
         x_1 = x_position(people.loc[people["key"] == row.parent, "column"].values[0]) + row.shift_parent
         y_1 = y_position(people.loc[people["key"] == row.parent, "row"].values[0]) + row.shift_y
         x_2 = x_position(people.loc[people["key"] == row.child, "column"].values[0])
         y_2 = y_position(people.loc[people["key"] == row.child, "row"].values[0])
-        pdf.set_dash_pattern(dash=1, gap=2)  # dashed line for distant children
+        pdf.set_dash_pattern(dash=2, gap=2)  # dashed line for distant children
         if x_1 != x_2:
             pdf.line(x_1, y_1 + 3, x_2, y_1 + 3)   # horizontal line from parent to child
         pdf.line(x_2, y_1 + 3, x_2, y_2)           # vertical line down to child
         pdf.line(x_1, y_1 + 3, x_1, y_1)           # vertical line up to parent
-    red   = color["terah_red"]
-    blue  = color["terah_blue"]
-    green = color["terah_green"]
+    red   = color["red"]
+    blue  = color["blue"]
+    byzantium = color["byzantium"]
     print(f"Put on the names of {len(people)} people.")
     for index, row in people.iterrows():
         pdf.set_font(font_regular, "", 10)
@@ -477,13 +358,23 @@ def create_people():
         pdf.set_fill_color(255)
         pdf.set_draw_color(255)
         pdf.rect(x - 0.5 * text_width - 1, y, text_width + 2, 10, style = "FD")
-        pdf.set_text_color(blue[0]*255, blue[1]*255, blue[2]*255)
+        pdf.set_text_color(blue[0], blue[1], blue[2])
         if row.color == "red":
-            pdf.set_text_color(red[0]*255, red[1]*255, red[2]*255)
-        if row.color == "green":
-            pdf.set_text_color(green[0]*255, green[1]*255, green[2]*255)
+            pdf.set_text_color(red[0], red[1], red[2])
+        if row.color == "byzantium":
+            pdf.set_text_color(byzantium[0], byzantium[1], byzantium[2])
         drawString(dict[row.key], 10, x, y, "c", False)
         # print(f"Included {dict[row.key]}")
+        # write superscript and subscript to the left of the name, if applicable
+        if pd.isna(row.sup_l) == False:
+            drawString(str(int(row.sup_l)), 4, x - 0.5 * text_width - 1, y + 0.7, "l", False)
+        if pd.isna(row.sub_l) == False:
+            drawString(str(int(row.sub_l)), 4, x - 0.5 * text_width - 1, y + 4.7, "l", False)
+        # write superscript and subscript to the right of the name, if applicable
+        if pd.isna(row.sup_r) == False:
+            drawString(str(int(row.sup_r)), 4, x + 0.5 * text_width + 1, y + 0.7, "r", False)
+        if pd.isna(row.sub_r) == False:
+            drawString(str(int(row.sub_r)), 4, x + 0.5 * text_width, y + 4.7, "r", False)
 
 def include_pictures():
     global font_regular, direction, pdf
@@ -522,20 +413,6 @@ def include_pictures_svg():
                 if not left_to_right:
                     local_x -= row.width
                 pdf.image(location, local_x, local_y - row.height - 1.2, row.width, row.height)
-
-    # text for world population graphic
-    population_x = x_position(-3677) + int(dict["daniel2_shift"])
-    population_y = 19
-    if version > 4.8:
-        population_x = x_position(-4075)
-        population_y = 33
-    pdf.set_text_color(25, 25, 160)
-    pdf.set_font_size(4)
-    drawString("source: https://www.worldometers.info/world-population/#table-historical", 4, population_x, y_position(population_y + 1), direction, False)
-    population_color = color["world_population"]
-    pdf.set_font(font_regular, "", 10)
-    pdf.set_text_color(population_color[0]*255, population_color[1]*255, population_color[2]*255)
-    drawString(dict["world_population"], 10, population_x, y_position(population_y) , direction, False)
 
 def create_qr_code(qr_file, language):
     # Create QR code instance
