@@ -7,7 +7,7 @@ import googletrans # it works again with v4.0.2 since 2024-11-20 that should fix
 import datetime, sys, os, asyncio, qrcode
 
 # Some general settings for this A3 version
-version  = 0.5
+version  = 0.6
 language = "en"
 language_str = "English"
 color_scheme = "normal"
@@ -96,12 +96,6 @@ def number_to_string(number, language):
             return str(number)
     else:
         return str(number)
-
-# initiate variables
-def initiate_counters():
-    global counter_people
-    counter_people   = 0
-
 
 def import_dictionary():           # Import strings for the respective language for names and comments
     global dict, version
@@ -248,8 +242,6 @@ def create_reference_events():
     # Deluge in 2370 BCE is special and included in the Adam_Moses part
     global counter_events
     file_events = "../db/events.csv"
-    if edition_2025:
-        file_events = "../db/events25.csv"
     events = pd.read_csv(file_events, encoding='utf8')
     print("Imported data of reference events:", len(events))
     for index, row in events.iterrows():
@@ -405,12 +397,11 @@ def include_pictures_svg():
                 local_x = x_position(-4090)
                 local_y = y_position(45.3)
         if row.fpdf2:    # only include the SVG images compatible with fpdf2, as indicated in csv
-            if not edition_2025 or (edition_2025 and row.edition25):
-                if row.year != 0:
-                    drawString(str(row.year), 5.9, local_x, local_y - 1, direction, True)
-                if not left_to_right:
-                    local_x -= row.width
-                pdf.image(location, local_x, local_y - row.height - 1.2, row.width, row.height)
+            if row.year != 0:
+                drawString(str(row.year), 5.9, local_x, local_y - 1, direction, True)
+            if not left_to_right:
+                local_x -= row.width
+            pdf.image(location, local_x, local_y - row.height - 1.2, row.width, row.height)
 
 def create_qr_code(qr_file, language):
     # Create QR code instance
@@ -473,6 +464,18 @@ def create_timestamp():
     pdf.set_font("Aptos-bold", "", 24)
     drawString(dict["pdf_title"], 22, 7*mm, 6*mm, "r", True)
 
+def create_page2():
+    global language, language_str, pdf
+    pdf.add_page(format=(page_width, page_height))
+    pdf.set_font(font_regular, "", fontsize_regular)
+    pdf.set_text_color(0)
+    drawString(dict["page2_title"], 18, x_position(14.35), y_position(3), "c", False)
+    drawString(dict["page2_subtitle"], 14, x_position(14.35), y_position(5), "c", False)
+    drawString(dict["page2_text1"], 10, x_position(0.5), y_position(8), "l", False)
+    drawString(dict["page2_text2"], 10, x_position(0.5), y_position(10), "l", False)
+    drawString(dict["page2_text3"], 10, x_position(0.5), y_position(12), "l", False)
+    drawString(dict["page2_text4"], 10, x_position(0.5), y_position(14), "l", False)
+
 def render_to_file():
     global pdf, filename
     pdf.output(filename)
@@ -481,7 +484,6 @@ def render_to_file():
 def create_promised_offspring(lang):
     global language
     language = lang
-    initiate_counters()
     import_dictionary()
     import_colors()
     create_canvas()
@@ -490,6 +492,7 @@ def create_promised_offspring(lang):
     # include_pictures()
     # include_pictures_svg()
     create_timestamp()
+    create_page2()
     render_to_file()
 
 def checkForValidLanguageCode(langCode):
