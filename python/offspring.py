@@ -475,6 +475,7 @@ def create_page2():
     drawString(dict["page2_text2"], 10, x_position(0.5), y_position(10), "l", False)
     drawString(dict["page2_text3"], 10, x_position(0.5), y_position(12), "l", False)
     drawString(dict["page2_text4"], 10, x_position(0.5), y_position(14), "l", False)
+    create_border()
 
 def render_to_file():
     global pdf, filename

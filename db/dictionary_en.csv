@@ -1,174 +1,174 @@
 key,text,english,notes,verse,tag,checked,date,checked_by
 version,0.6,0.6,,,float,TRUE,2026-06-06,Matthias
 pdf_title,The Promised Offspring,The Promised Offspring,2026-06-06,,text,TRUE,2026-06-06,Matthias
-pdf_subject,Lineage of Jesus,Lineage of Jesus,,,text,TRUE,,
-Adam,Adam,Adam,Luke 3:38,Luke 3:38,bible,TRUE,,
-Seth,Seth,Seth,,Luke 3:38,bible,TRUE,,
-Enosh,Enosh,Enosh,,Luke 3:38,bible,TRUE,,
-Cainan,Cainan,Cainan,,Luke 3:37,bible,TRUE,,
-Kenan,Kenan (Ca·iʹnan),Kenan,Cainan in Luke 3:37,Genesis 5:12,bible,TRUE,,
-Mahalaleel,Ma·haʹla·le·el ,Mahalaleel,Ma·hala·lel,Luke 3:37,bible,TRUE,,
-Jared,Jaʹred,Jared,,Luke 3:37,bible,TRUE,,
-Enoch,Enoch,Enoch,,Luke 3:37,bible,TRUE,,
-Methuselah,Methuselah,Methuselah,Luke 3:37,,bible,TRUE,,
-Lamech,Lamech,Lamech,,,bible,TRUE,,
-Noah,Noah,Noah,,,bible,TRUE,,
-Shem,Shem,Shem,,,bible,TRUE,,
-Arpachshad,Arpachshad,Arpachshad,Luke 3:36,,bible,TRUE,,
-Shelah,Shelah,Shelah,,,,TRUE,,
-Eber,Eber,Eber,,,,TRUE,,
-Peleg,Peleg,Peleg,,,,TRUE,,
-Reu,Reu,Reu,,,,TRUE,,
-Serug,Serug,Serug,Luke 3:35,,,TRUE,,
-Nahor,Nahor,Nahor,Genesis 11:24,,,TRUE,,
-Terah,Terah,Terah,,,,TRUE,,
-Abraham,Abraham,Abraham,,,,TRUE,,
-Isaac,Isaac,Isaac,,,,,,
-Jacob,Jacob,Jacob,Luke 3:34,,,,,
-Judah,Judah,Judah,Leah,,,,,
-Levi,Levi,Levi,Leah,,,,,
-Reuben,Reuben,Reuben,Leah,,,,,
-Simeon,Simeon,Simeon,Leah,,,,,
-Issachar,Issachar,Issachar,Leah,,,,,
-Zebulun,Zebulun,Zebulun,Leah,,,,,
-Joseph,Joseph,Joseph,Rahel,,,,,
-Benjamin,Benjamin,Benjamin,Rahel,,,,,
-Asher,Asher,Asher,Zilpah,,,,,
-Gad,Gad,Gad,Zilpah,,,,,
-Naphtali,Naphtali,Naphtali,Bilhah,,,,,
-Dan,Dan,Dan,Bilhah,,,,,
-Perez,Perez,Perez,from Tamar and Judah,,,,,
-Hezron,Hezron,Hezron,,,,,,
-Ram_Arni,Ram (Arni),Ram (Arni),"Matthew Ram, Luke Arni",,,,,
-Amminadab,Amminadab,Amminadab,,,,,,
-Nahshon,Nahshon,Nahshon,,,,,,
-Salma_Salmon,Salma (Salmon),Salma (Salmon),with Rahab (Matthew),,,,,
-Boaz,Boaz,Boaz,with Ruth (Matthew),,,,,
-Obed,Obed,Obed,,,,,,
-Jesse,Jesse,Jesse,,,,,,
-David,David,David,with Bathsheba,,,,,
-Nathan,Nathan,Nathan,natural through Mary (Luke),,,,,
-Mattatha,Mattatha,Mattatha,,,,,,
-Menna,Menna,Menna,,,,,,
-Melea,Melea,Melea,,,,,,
-Elakim,Elakim,Elakim,,,,,,
-Jonam,Jonam,Jonam,,,,,,
-Joseph,Joseph,Joseph,,,,,,
-Judas,Judas,Judas,,,,,,
-Symeon,Symeon,Symeon,,,,,,
-Levi,Levi,Levi,,,,,,
-Matthat,Matthat,Matthat,,,,,,
-Jorim,Jorim,Jorim,,,,,,
-Eliezer,Eliezer,Eliezer,,,,,,
-Jesus,Jesus,Jesus,,,,,,
-Er,Er,Er,,,,,,
-Elmadam,Elmadam,Elmadam,,,,,,
-Cosam,Cosam,Cosam,,,,,,
-Addi,Addi,Addi,,,,,,
-Melchi,Melchi,Melchi,,,,,,
-Neri,Neri,Neri,,,,,,
-Shealtiel,Shealtiel,Shealtiel,,,,,,
-Zerubbabel,Zerubbabel,Zerubbabel,overlap two lineages,,,,,
-Rhesa,Rhesa,Rhesa,,,,,,
-Joanan,Joanan,Joanan,,,,,,
-Joda,Joda,Joda,,,,,,
-Josech,Josech,Josech,,,,,,
-Semein,Semein,Semein,,,,,,
-Mattathias,Mattathias,Mattathias,,,,,,
-Maath,Maath,Maath,,,,,,
-Naggai,Naggai,Naggai,,,,,,
-Esli,Esli,Esli,,,,,,
-Nahum,Nahum,Nahum,,,,,,
-Amos,Amos,Amos,,,,,,
-Mattathias,Mattathias,Mattathias,,,,,,
-Joseph,Joseph,Joseph,,,,,,
-Jannai,Jannai,Jannai,,,,,,
-Melchi,Melchi,Melchi,,,,,,
-Levi,Levi,Levi,,,,,,
-Matthat,Matthat,Matthat,,,,,,
-Heli,Heli,Heli,,,,,,
-Joseph,Joseph,Joseph,son of Rachel,,,,,
-Joseph2,Joseph,Joseph,son of Jonam,,,,,
-Joseph3,Joseph,Joseph,son of Mattathias,,,,,
-Joseph4,Joseph,Joseph,"son of Jacob, stepfather of Jesus",,,,,
-Jesus,Jesus,Jesus,,,,,,
-Jesus2,Jesus,Jesus,,,,,,
-Mary,Mary,Mary,Luke states Joseph here,,,,,
-Solomon,Solomon,Solomon,legal line w/ Joseph (Matthew),,,,,
-Rehoboam,Rehoboam,Rehoboam,,,,,,
-Abijah,Abijah,Abijah,,,,,,
-Asa,Asa,Asa,Matt 1:8,,,,,
-Jehoshaphat,Jehoshaphat,Jehoshaphat,,,,,,
-Jehoram,Jehoram,Jehoram,,,,,,
-Ahaziah,Ahaziah,Ahaziah,missing in Matthew,,,,,
-Jehoash,Jehoash,Jehoash,missing in Matthew,,,,,
-Amaziah,Amaziah,Amaziah,missing in Matthew,,,,,
-Uzziah_Azariah,Uzziah (Azariah),Uzziah (Azariah),Matt 1:9,,,,,
-Jotham,Jotham,Jotham,,,,,,
-Ahaz,Ahaz,Ahaz,,,,,,
-Hezekiah,Hezekiah,Hezekiah,,,,,,
-Manasseh,Manasseh,Manasseh,son of Joseph,,,,,
-Manasseh2,Manasseh,Manasseh,son of Hezekiah,,,,,
-Amon,Amon,Amon,,,,,,
-Josiah,Josiah,Josiah,,,,,,
-Eliakim_Jehoiakim,Eliakim (Jehoiakim),Eliakim (Jehoiakim),,,,,,
-Jeconiah_Jehoiachin,Jeconiah (Jehoiachin),Jeconiah (Jehoiachin),,,,,,
-Shealtiel,Shealtiel,Shealtiel,,,,,,
-Pedaiah,Pedaiah,Pedaiah,"missing in Matthew, Z in 55",,,,,
-Abiud,Abiud,Abiud,after Zerubbabel (Sheshbazzar),,,,,
-Eliakim,Eliakim,Eliakim,,,,,,
-Azor,Azor,Azor,,,,,,
-Zadok,Zadok,Zadok,,,,,,
-Achim,Achim,Achim,,,,,,
-Eliud,Eliud,Eliud,,,,,,
-Eleazar,Eleazar,Eleazar,,,,,,
-Matthan,Matthan,Matthan,,,,,,
-Jacob,Jacob,Jacob,,,,,,
-Joseph,Joseph,Joseph,,,,,,
-Eve,Eve,Eve,,,,,,
-Sarah,Sarah,Sarah,,,,,,
-Rebekah,Rebekah,Rebekah,,,,,,
-Leah,Leah,Leah,,,,,,
-Rahel,Rahel,Rahel,,,,,,
-Zilpah,Zilpah,Zilpah,,,,,,
-Bilhah,Bilhah,Bilhah,,,,,,
-Bathsheba,Bathsheba,Bathsheba,,,,,,
-Dinah,Dinah,Dinah,,,,,,
-Abel,Abel,Abel,,,,,,
-Cain,Cain,Cain,,,,,,
-Asenath,Asenath,Asenath,,,,,,
-Manasseh,Manasseh,Manasseh,,,,,,
-Ephraim,Ephraim,Ephraim,,,,,,
-Tamar,Taʹmar,Tamar,Genesis 38:6,,,,,
-Naamah,Naʹa·mah [Ammon],Naamah,1 Kings 14:21,,,,,
-Maacah,Maʹa·cah,Maacah,1 Kings 15:2,,,,,
-Azubah,A·zuʹbah,Azubah,1 Kings 22:42,,,,,
-Athaliah,Ath·a·liʹah,Athaliah,2 Kings 8:26,,,,,
-Zibiah,Zibʹi·ah,Zibiah,2 Kings 12:1,,,,,
-Jehoaddan_Jehoaddin,Je·ho·adʹdan (Je·ho·adʹdin),Jehoaddan (Jehoaddin),2 Kings 14:2,,,,,
-Jecoliah,Je·co·liʹah,Jecoliah,2 Kings 15:2,,,,,
-Jerusha_Jerushah,Je·ruʹsha[h],Jerusha (Jerushah),2 Kings 15:33,,,,,
-Abi_Abijah,Abi (A·biʹjah),Abi (Abijah),2 Kings 18:2,,,,,
-Hephzibah,Hephʹzi·bah,Hephzibah,2 Kings 21:1,,,,,
-Meshullemeth,Me·shulʹle·meth,Me·shulʹle·meth,2 Kings 21:19,,,,,
-Jedidah,Je·diʹdah,Jedidah,2 Kings 22:1,,,,,
-Hamutal,Ha·muʹtal,Hamutal,2 Kings 23:31,,,,,
-Nehushta,Ne·hushʹta,Nehushta,2 Kings 24:8,,,,,
-daughter_of_Neri,daughter of Neri,daughter of Neri,,,,,,
-Rahab,Rahab,Rahab,,,,,,
-Ruth,Ruth [Moab],Ruth,Ruth 1:4,,,,,
-Othniel,Othniel,Othniel,from Judah (1),,,,,
-Ehud,Ehud,Ehud,from Benjamin (2),,,,,
-Schamgar,Schamgar,Schamgar,from Naphtali (3),,,,,
-Barak,Barak,Barak,from Naphtali (4),,,,,
-Gideon,Gideon,Gideon,from Manasseh (5),,,,,
-Tola,Tola,Tola,from Issachar (6),,,,,
-Jair,Jair,Jair,from Juda (7),,,,,
-Jephthah,Jephthah,Jephthah,from Manasseh (8),,,,,
-Ibzan,Ibzan,Ibzan,from Zebulon (9),,,,,
-Elon,Elon,Elon,from Zebulon (10),,,,,
-Abdon,Abdon,Abdon,from Ephraim (11),,,,,
-Samson,Samson,Samson,from Dan (12),,,,,
+pdf_subject,Lineage of Jesus,Lineage of Jesus,,,text,TRUE,2026-06-06,Matthias
+Adam,Adam,Adam,,Luke 3:38,bible,TRUE,2026-06-06,Matthias
+Seth,Seth,Seth,,Luke 3:38,bible,TRUE,2026-06-06,Matthias
+Enosh,Enosh,Enosh,,Luke 3:38,bible,TRUE,2026-06-06,Matthias
+Cainan,Cainan,Cainan,,Luke 3:37,bible,TRUE,2026-06-06,Matthias
+Kenan,Kenan (Ca·iʹnan),Kenan,Cainan in Luke 3:37,Genesis 5:12,bible,TRUE,2026-06-06,Matthias
+Mahalaleel,Ma·haʹla·le·el ,Mahalaleel,,Luke 3:37,bible,TRUE,2026-06-06,Matthias
+Jared,Jaʹred,Jared,,Luke 3:37,bible,TRUE,2026-06-06,Matthias
+Enoch,Eʹnoch,Enoch,,Luke 3:37,bible,TRUE,2026-06-06,Matthias
+Methuselah,Me·thuʹse·lah,Methuselah,,Luke 3:37,bible,TRUE,2026-06-06,Matthias
+Lamech,Laʹmech,Lamech,,Luke 3:36,bible,TRUE,2026-06-06,Matthias
+Noah,Noah,Noah,,Luke 3:36,bible,TRUE,2026-06-06,Matthias
+Shem,Shem,Shem,,Luke 3:36,bible,TRUE,2026-06-06,Matthias
+Arpachshad,Ar·pachʹshad,Arpachshad,,Luke 3:36,bible,TRUE,2026-06-06,Matthias
+Shelah,Sheʹlah,Shelah,,Luke 3:35,bible,TRUE,2026-06-06,Matthias
+Eber,Eʹber,Eber,,Luke 3:35,bible,TRUE,2026-06-06,Matthias
+Peleg,Peʹleg,Peleg,,Luke 3:35,bible,TRUE,2026-06-06,Matthias
+Reu,Reʹu,Reu,,Luke 3:35,bible,TRUE,2026-06-06,Matthias
+Serug,Seʹrug,Serug,,Luke 3:35,bible,TRUE,2026-06-06,Matthias
+Nahor,Naʹhor,Nahor,,Genesis 11:24,bible,TRUE,2026-06-06,Matthias
+Terah,Teʹrah,Terah,,Luke 3:34,bible,TRUE,2026-06-06,Matthias
+Abraham,Abraham,Abraham,,Luke 3:34,bible,TRUE,2026-06-06,Matthias
+Isaac,Isaac,Isaac,,Luke 3:34,bible,TRUE,2026-06-06,Matthias
+Jacob,Jacob,Jacob,,Luke 3:34,bible,TRUE,2026-06-06,Matthias
+Judah,Judah,Judah,Leah,Genesis 35:23,bible,TRUE,2026-06-06,Matthias
+Levi,Leʹvi,Levi,Leah,Genesis 35:23,bible,TRUE,2026-06-06,Matthias
+Reuben,Reuʹben,Reuben,Leah,Genesis 35:23,bible,TRUE,2026-06-06,Matthias
+Simeon,Simʹe·on,Simeon,Leah,Genesis 35:23,bible,TRUE,2026-06-06,Matthias
+Issachar,Isʹsa·char,Issachar,Leah,Genesis 35:23,bible,TRUE,2026-06-06,Matthias
+Zebulun,Zebʹu·lun,Zebulun,Leah,Genesis 35:23,bible,TRUE,2026-06-06,Matthias
+Joseph,Joseph,Joseph,Rahel,Genesis 35:24,bible,TRUE,2026-06-06,Matthias
+Benjamin,Benjamin,Benjamin,Rahel,Genesis 35:24,bible,TRUE,2026-06-06,Matthias
+Asher,Ashʹer,Asher,Zilpah,Genesis 35:26,bible,TRUE,2026-06-06,Matthias
+Gad,Gad,Gad,Zilpah,Genesis 35:26,bible,TRUE,2026-06-06,Matthias
+Naphtali,Naphʹta·li,Naphtali,Bilhah,Genesis 35:25,bible,TRUE,2026-06-06,Matthias
+Dan,Dan,Dan,Bilhah,Genesis 35:25,bible,TRUE,2026-06-06,Matthias
+Perez,Peʹrez,Perez,from Tamar and Judah,Matthew 1:3,bible,TRUE,2026-06-06,Matthias
+Hezron,Hezʹron,Hezron,,Matthew 1:3,bible,TRUE,2026-06-06,Matthias
+Ram_Arni,Ram (Arni),Ram (Arni),"Matthew Ram, Luke Arni",Matthew 1:3,bible,TRUE,2026-06-06,Matthias
+Amminadab,Am·minʹa·dab,Amminadab,,Matthew 1:4,bible,TRUE,2026-06-06,Matthias
+Nahshon,Nahʹshon,Nahshon,,Luke 3:32,bible,TRUE,2026-06-06,Matthias
+Salma_Salmon,Salʹmon (Salmon),Salma (Salmon),with Rahab (Matthew),Luke 3:32,bible,TRUE,2026-06-06,Matthias
+Boaz,Boʹaz,Boaz,with Ruth (Matthew),Luke 3:32,bible,TRUE,2026-06-06,Matthias
+Obed,Oʹbed,Obed,,Luke 3:32,bible,TRUE,2026-06-06,Matthias
+Jesse,Jesʹse,Jesse,,Luke 3:32,bible,TRUE,2026-06-06,Matthias
+David,David,David,with Bathsheba below:,Luke 3:31,bible,TRUE,2026-06-06,Matthias
+Nathan,Nathan,Nathan,natural through Mary (Luke),Luke 3:31,bible,TRUE,2026-06-06,Matthias
+Mattatha,Matʹta·tha,Mattatha,,Luke 3:31,bible,TRUE,2026-06-06,Matthias
+Menna,Menʹna,Menna,,Luke 3:31,bible,TRUE,2026-06-06,Matthias
+Melea,Meʹle·a,Melea,,Luke 3:31,bible,TRUE,2026-06-06,Matthias
+Elakim,E·liʹa·kim,Elakim,,Luke 3:30,bible,TRUE,2026-06-06,Matthias
+Jonam,Joʹnam,Jonam,,Luke 3:30,bible,TRUE,2026-06-06,Matthias
+Joseph2,Joseph,Joseph,"son of Jonam, Eliakim",Luke 3:30,bible,TRUE,2026-06-06,Matthias
+Judas,Judas,Judas,,Luke 3:30,bible,TRUE,2026-06-06,Matthias
+Symeon,Symʹe·on,Symeon,,Luke 3:30,bible,TRUE,2026-06-06,Matthias
+Levi2,Leʹvi,Levi,son of Symeon,Luke 3:29,bible,TRUE,2026-06-06,Matthias
+Matthat,Matʹthat,Matthat,,Luke 3:29,bible,TRUE,2026-06-06,Matthias
+Jorim,Joʹrim,Jorim,,Luke 3:29,bible,TRUE,2026-06-06,Matthias
+Eliezer,E·li·eʹzer,Eliezer,,Luke 3:29,bible,TRUE,2026-06-06,Matthias
+Jesus,Jesus,Jesus,son of Eliezer,Luke 3:29,bible,TRUE,2026-06-06,Matthias
+Er,Er,Er,,Luke 3:28,bible,TRUE,2026-06-06,Matthias
+Elmadam,El·maʹdam,Elmadam,,Luke 3:28,bible,TRUE,2026-06-06,Matthias
+Cosam,Coʹsam,Cosam,,Luke 3:28,bible,TRUE,2026-06-06,Matthias
+Addi,Adʹdi,Addi,,Luke 3:28,bible,TRUE,2026-06-06,Matthias
+Melchi,Melʹchi,Melchi,,Luke 3:28,bible,TRUE,2026-06-06,Matthias
+Neri,Neʹri,Neri,,Luke 3:27,bible,TRUE,2026-06-06,Matthias
+Shealtiel,She·alʹti·el,Shealtiel,,Luke 3:27,bible,TRUE,2026-06-06,Matthias
+Zerubbabel,Ze·rubʹba·bel,Zerubbabel,overlap two lineages,Luke 3:27,bible,TRUE,2026-06-06,Matthias
+Rhesa,Rheʹsa,Rhesa,,Luke 3:27,bible,TRUE,2026-06-06,Matthias
+Joanan,Jo·anʹan,Joanan,,Luke 3:27,bible,TRUE,2026-06-06,Matthias
+Joda,Joʹda,Joda,,Luke 3:26,bible,TRUE,2026-06-06,Matthias
+Josech,Joʹsech,Josech,,Luke 3:26,bible,TRUE,2026-06-06,Matthias
+Semein,Semʹe·in,Semein,,Luke 3:26,bible,TRUE,2026-06-06,Matthias
+Mattathias,Mat·ta·thiʹas,Mattathias,,Luke 3:26,bible,TRUE,2026-06-06,Matthias
+Maath,Maʹath,Maath,,Luke 3:26,bible,TRUE,2026-06-06,Matthias
+Naggai,Nagʹga·i,Naggai,,Luke 3:25,bible,TRUE,2026-06-06,Matthias
+Esli,Esʹli,Esli,,Luke 3:25,bible,TRUE,2026-06-06,Matthias
+Nahum,Naʹhum,Nahum,,Luke 3:25,bible,TRUE,2026-06-06,Matthias
+Amos,Aʹmos,Amos,,Luke 3:25,bible,TRUE,2026-06-06,Matthias
+Mattathias,Mat·ta·thiʹas,Mattathias,,Luke 3:25,bible,TRUE,2026-06-06,Matthias
+Joseph3,Joseph,Joseph,,Luke 3:24,bible,TRUE,2026-06-06,Matthias
+Jannai,Janʹna·i,Jannai,,Luke 3:24,bible,TRUE,2026-06-06,Matthias
+Melchi,Melʹchi,Melchi,,Luke 3:24,bible,TRUE,2026-06-06,Matthias
+Levi,Leʹvi,Levi,,Luke 3:24,bible,TRUE,2026-06-06,Matthias
+Matthat,Matʹthat,Matthat,,Luke 3:24,bible,TRUE,2026-06-06,Matthias
+Heli,Heʹli,Heli,,Luke 3:23,bible,TRUE,2026-06-06,Matthias
+Joseph,Joseph,Joseph,son of Rachel,Genesis 35:24,bible,TRUE,2026-06-06,Matthias
+Joseph2,Joseph,Joseph,son of Jonam,Luke 3:30,bible,TRUE,2026-06-06,Matthias
+Joseph3,Joseph,Joseph,son of Mattathias,Luke 3:24,bible,TRUE,2026-06-06,Matthias
+Joseph4,Joseph,Joseph,"son of Jacob, stepfather of Jesus",Luke 3:23,bible,TRUE,2026-06-06,Matthias
+Jesus,Jesus,Jesus,Christ,Matthew 1:16,bible,TRUE,2026-06-06,Matthias
+Jesus2,Jesus,Jesus,son of Eliezer,Luke 3:29,bible,TRUE,2026-06-06,Matthias
+Mary,Mary,Mary,Luke states Joseph here,Luke 3:23,bible,TRUE,2026-06-06,Matthias
+Solomon,Solʹo·mon,Solomon,legal line w/ Joseph (Matthew),Matthew 1:6,bible,TRUE,2026-06-06,Matthias
+Rehoboam,Re·ho·boʹam,Rehoboam,,Matthew 1:7,bible,TRUE,2026-06-06,Matthias
+Abijah,A·biʹjah,Abijah,,Matthew 1:7,bible,TRUE,2026-06-06,Matthias
+Asa,Aʹsa,Asa,,Matthew 1:8,bible,TRUE,2026-06-06,Matthias
+Jehoshaphat,Je·hoshʹa·phat,Jehoshaphat,,Matthew 1:8,bible,TRUE,2026-06-06,Matthias
+Jehoram,Je·hoʹram,Jehoram,,Matthew 1:8,bible,TRUE,2026-06-06,Matthias
+Ahaziah,A·ha·ziʹah ,Ahaziah,"missing in Matthew, Ahaziah #2",1 Kings 22:51,bible,TRUE,2026-06-06,Matthias
+Jehoash,Je·hoʹash,Jehoash,"missing in Matthew, Jehoash #1",2 Kings 12:1,bible,TRUE,2026-06-06,Matthias
+Amaziah,Am·a·ziʹah,Amaziah,"missing in Matthew, Amayiah #2",2 Kings 14:1,bible,TRUE,2026-06-06,Matthias
+Uzziah_Azariah,Uz·ziʹah (Azariah),Uzziah (Azariah),,Matthew 1:9,bible,TRUE,2026-06-06,Matthias
+Jotham,Joʹtham,Jotham,,Matthew 1:9,bible,TRUE,2026-06-06,Matthias
+Ahaz,Aʹhaz,Ahaz,,Matthew 1:9,bible,TRUE,2026-06-06,Matthias
+Hezekiah,Hez·e·kiʹah,Hezekiah,,Matthew 1:9,bible,TRUE,2026-06-06,Matthias
+Manasseh,Ma·nasʹseh,Manasseh,"son of Joseph, #1",Genesis 41:51,bible,TRUE,2026-06-06,Matthias
+Manasseh2,Ma·nasʹseh,Manasseh,"son of Hezekiah, #4",Matthew 1:10,bible,TRUE,2026-06-06,Matthias
+Amon,Aʹmon,Amon,,Matthew 1:10,bible,TRUE,2026-06-06,Matthias
+Josiah,Jo·siʹah,Josiah,,Matthew 1:10,bible,TRUE,2026-06-06,Matthias
+Eliakim_Jehoiakim,E·liʹa·kim (Je·hoiʹa·kim),Eliakim (Jehoiakim),"626-618, missing in Matthew, #2",2 Kings 23:34,bible,TRUE,2026-06-06,Matthias
+Jeconiah_Jehoiachin,Jec·o·niʹah (Je·hoiʹa·chin),Jeconiah (Jehoiachin),,Matthew 1:11,bible,TRUE,2026-06-06,Matthias
+Shealtiel,She·alʹti·el,Shealtiel,,Matthew 1:12,bible,TRUE,2026-06-06,Matthias
+Pedaiah,Pe·daiʹah,Pedaiah,"missing in Matthew, Z in 55",1 Chronicles 3:19,bible,TRUE,2026-06-06,Matthias
+Abiud,A·biʹud,Abiud,after Zerubbabel (Sheshbazzar),Matthew 1:13,bible,TRUE,2026-06-06,Matthias
+Eliakim,E·liʹa·kim,Eliakim,,Matthew 1:13,bible,TRUE,2026-06-06,Matthias
+Azor,Aʹzor,Azor,,Matthew 1:13,bible,TRUE,2026-06-06,Matthias
+Zadok,Zaʹdok,Zadok,,Matthew 1:14,bible,TRUE,2026-06-06,Matthias
+Achim,Aʹchim,Achim,,Matthew 1:14,bible,TRUE,2026-06-06,Matthias
+Eliud,E·liʹud,Eliud,,Matthew 1:14,bible,TRUE,2026-06-06,Matthias
+Eleazar,El·e·aʹzar,Eleazar,,Matthew 1:15,bible,TRUE,2026-06-06,Matthias
+Matthan,Matʹthan,Matthan,,Matthew 1:15,bible,TRUE,2026-06-06,Matthias
+Jacob,Jacob,Jacob,,Matthew 1:15,bible,TRUE,2026-06-06,Matthias
+Joseph,Joseph,Joseph,,Matthew 1:16,bible,TRUE,2026-06-06,Matthias
+Eve,Eve,Eve,,Genesis 4:1,bible,TRUE,2026-06-06,Matthias
+Sarah,Sarah,Sarah,,Genesis 17:15,bible,TRUE,2026-06-06,Matthias
+Rebekah,Re·bekʹah,Rebekah,,Genesis 22:23,bible,TRUE,2026-06-06,Matthias
+Leah,Leʹah,Leah,,Genesis 35:23,bible,TRUE,2026-06-06,Matthias
+Rahel,Rahel,Rahel,,Genesis 35:24,bible,TRUE,2026-06-06,Matthias
+Zilpah,Zilʹpah,Zilpah,,Genesis 35:26,bible,TRUE,2026-06-06,Matthias
+Bilhah,Bilʹhah,Bilhah,,Genesis 35:25,bible,TRUE,2026-06-06,Matthias
+Bathsheba,Bath-sheʹba,Bathsheba,"wife of Uriah, granddaugher of Ahitophel",1 Chronicles 3:5,bible,TRUE,2026-06-06,Matthias
+Dinah,Diʹnah,Dinah,,Genesis 30:21,bible,TRUE,2026-06-06,Matthias
+Abel,Aʹbel,Abel,,Genesis 4:2,bible,TRUE,2026-06-06,Matthias
+Cain,Cain,Cain,,Genesis 4:2,bible,TRUE,2026-06-06,Matthias
+Asenath,Asʹe·nath,Asenath,,Genesis 41:45,bible,TRUE,2026-06-06,Matthias
+Manasseh,Ma·nasʹseh,Manasseh,,Genesis 41:51,bible,TRUE,2026-06-06,Matthias
+Ephraim,Eʹphra·im,Ephraim,,Genesis 41:52,bible,TRUE,2026-06-06,Matthias
+Tamar,Taʹmar,Tamar,,Genesis 38:6,bible,TRUE,2026-06-06,Matthias
+Naamah,Naʹa·mah [Ammon],Naamah,,1 Kings 14:21,bible,TRUE,2026-06-06,Matthias
+Maacah,Maʹa·cah,Maacah,,1 Kings 15:2,bible,TRUE,2026-06-06,Matthias
+Azubah,A·zuʹbah,Azubah,,1 Kings 22:42,bible,TRUE,2026-06-06,Matthias
+Athaliah,Ath·a·liʹah,Athaliah,,2 Kings 8:26,bible,TRUE,2026-06-06,Matthias
+Zibiah,Zibʹi·ah,Zibiah,,2 Kings 12:1,bible,TRUE,2026-06-06,Matthias
+Jehoaddan_Jehoaddin,Je·ho·adʹdan (Je·ho·adʹdin),Jehoaddan (Jehoaddin),,2 Kings 14:2,bible,TRUE,2026-06-06,Matthias
+Jecoliah,Je·co·liʹah,Jecoliah,,2 Kings 15:2,bible,TRUE,2026-06-06,Matthias
+Jerusha_Jerushah,Je·ruʹsha[h],Jerusha (Jerushah),,2 Kings 15:33,bible,TRUE,2026-06-06,Matthias
+Abi_Abijah,Abi (A·biʹjah),Abi (Abijah),,2 Kings 18:2,bible,TRUE,2026-06-06,Matthias
+Hephzibah,Hephʹzi·bah,Hephzibah,,2 Kings 21:1,bible,TRUE,2026-06-06,Matthias
+Meshullemeth,Me·shulʹle·meth,Me·shulʹle·meth,,2 Kings 21:19,bible,TRUE,2026-06-06,Matthias
+Jedidah,Je·diʹdah,Jedidah,,2 Kings 22:1,bible,TRUE,2026-06-06,Matthias
+Hamutal,Ha·muʹtal,Hamutal,,2 Kings 23:31,bible,TRUE,2026-06-06,Matthias
+Nehushta,Ne·hushʹta,Nehushta,,2 Kings 24:8,bible,TRUE,2026-06-06,Matthias
+daughter_of_Neri,daughter of Neri,daughter of Neri,,,text,TRUE,2026-06-06,Matthias
+Rahab,Raʹhab,Rahab,,Joshua 2:1,bible,TRUE,2026-06-06,Matthias
+Ruth,Ruth [Moab],Ruth,,Ruth 1:4,bible,TRUE,2026-06-06,Matthias
+Othniel,Othʹni·el,Othniel,from Judah (1),Judges 3:9-11,bible,TRUE,2026-06-06,Matthias
+Ehud,Eʹhud,Ehud,from Benjamin (2),Judges 3:15-18,bible,TRUE,2026-06-06,Matthias
+Shamgar,Shamʹgar,Shamgar,from Naphtali (3),Judges 3:31,bible,TRUE,2026-06-06,Matthias
+Barak,Baʹrak,Barak,"from Naphtali (4), Deborah, Jael",Judges 4:6,bible,TRUE,2026-06-06,Matthias
+Gideon,Gidʹe·on,Gideon,from Manasseh (5),Judges 7:1,bible,TRUE,2026-06-06,Matthias
+Tola,Toʹla,Tola,from Issachar (6),Judges 10:1,bible,TRUE,2026-06-06,Matthias
+Jair,Jaʹir,Jair,from Juda (7),Judges 10:3,bible,TRUE,2026-06-06,Matthias
+Jephthah,Jephʹthah,Jephthah,from Manasseh (8),Judges 11:1,bible,TRUE,2026-06-06,Matthias
+Ibzan,Ibʹzan,Ibzan,from Zebulon (9),Judges 12:8,bible,TRUE,2026-06-06,Matthias
+Elon,Eʹlon,Elon,from Zebulon (10),Judges 12:11,bible,TRUE,2026-06-06,Matthias
+Abdon,Abʹdon,Abdon,from Ephraim (11),Judges 12:13,bible,TRUE,2026-06-06,Matthias
+Samson,Samson,Samson,from Dan (12),Judges 13:24,bible,TRUE,2026-06-06,Matthias
 page2_title,Page 2,Page 2,,,,,,
 page2_subtitle,covenants and possible interruptions,covenants and possible interruptions,,,,,,
 page2_text1,Text 1,Text 1,,,,,,
