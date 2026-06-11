@@ -7,7 +7,7 @@ import googletrans # it works again with v4.0.2 since 2024-11-20 that should fix
 import datetime, sys, os, asyncio, qrcode
 
 # Some general settings for this A3 version
-version  = 0.6
+version  = 0.7
 language = "en"
 language_str = "English"
 color_scheme = "normal"
@@ -31,16 +31,20 @@ if os.getcwd()[-6:] != "python":
     print("This script must be executed inside the python folder.")
     exit()
 
-def x_position(column):      # we have 287 mm vertically for 28.7 columns of 1 cm width
+def x_position(column):      # we have 287 mm vertically for 28.7 columns of 1 cm width - middle 14.35
     global x1, left_to_right
     if left_to_right:
         return x1 + (column * 10*mm)
     else:
         return x1 + (28.7 - column) * 10*mm
 
-def y_position(row_y):           # with update 2025/11/29 to height 14 pt
+# position 2025/11/11: 95 rows with 12 pt height, text 10 pt, so 1 pt above and below
+# position 2025/11/29: 85 rows with 14 pt height, text 10 pt, so 2 pt above and below
+# position 2026/06/12: row is now pt directly, just multiply your values by 14
+
+def y_position(row_y): 
     global y1
-    return y1 + row_y * 14       # vertically centered 10 point script in 14 pt line, 2 pt above/below
+    return y1 + row_y 
 
 def drawString(text, fontsize, x_string, y_string, position, white_background):
     global pdf
@@ -365,6 +369,7 @@ def create_people():
             drawString(str(int(row.sup_r)), 4, x + 0.5 * text_width + 1, y + 0.7, "r", False)
         if pd.isna(row.sub_r) == False:
             drawString(str(int(row.sub_r)), 4, x + 0.5 * text_width, y + 4.7, "r", False)
+    pdf.set_dash_pattern(dash=0, gap=0)  # back to SOLID line
 
 def include_pictures():
     global font_regular, direction, pdf
@@ -422,7 +427,7 @@ def create_qr_code(qr_file, language):
 
 def create_timestamp():
     qr_x = 28.66
-    qr_y = 0.1
+    qr_y = 1.4
     pdf.set_font("Aptos", "", 4)
     pdf.set_text_color(50)
     pdf.set_text_shaping(use_shaping_engine=True, language="eng")
@@ -450,21 +455,21 @@ def create_timestamp():
     dateindex = timestamp[2:4] + timestamp[5:7] + timestamp[8:10]
     rotation_angle = 90
     # rotation_y = y_position(qr_y + 0.1)
-    rotation_y = y_position(qr_y + 0.1) - qr_size * 0.94
+    rotation_y = y_position(qr_y + 1.4) - qr_size * 0.94
     if left_to_right:
         rotation_angle = -90
         rotation_y += qr_size * 0.94
     with pdf.rotation(angle=rotation_angle, x=x_position(qr_x), y=rotation_y):
-        pdf.set_xy(x_position(qr_x), y_position(qr_y + 0.2) + qr_size * (1.47 - 0.47 * direction_factor))
+        pdf.set_xy(x_position(qr_x), y_position(qr_y + 2.8) + qr_size * (1.47 - 0.47 * direction_factor))
         pdf.cell(text="promised-offspring " + language)
-        pdf.set_xy(x_position(qr_x), y_position(qr_y + 0.58) + qr_size * (1.47 - 0.47 * direction_factor))
+        pdf.set_xy(x_position(qr_x), y_position(qr_y + 8.128) + qr_size * (1.47 - 0.47 * direction_factor))
         pdf.cell(text=dateindex)
     # And finally the name of this project into the top left corner
     pdf.set_text_color(28, 14, 118)
     pdf.set_font("Aptos-bold", "", 24)
     drawString(dict["pdf_title"], 22, 7*mm, 6*mm, "r", True)
 
-def create_page2():
+def create_page2(): # ****************************************************************************************************
     global language, language_str, pdf
     pdf.add_page(format=(page_width, page_height))
     pdf.set_font(font_regular, "", fontsize_regular)
@@ -472,10 +477,15 @@ def create_page2():
     drawString(dict["page2_title"], 18, x_position(14.35), y_position(3), "c", False)
     drawString(dict["page2_subtitle"], 14, x_position(14.35), y_position(5), "c", False)
     drawString(dict["page2_text1"], 10, x_position(0.5), y_position(8), "l", False)
-    drawString(dict["page2_text2"], 10, x_position(0.5), y_position(10), "l", False)
-    drawString(dict["page2_text3"], 10, x_position(0.5), y_position(12), "l", False)
-    drawString(dict["page2_text4"], 10, x_position(0.5), y_position(14), "l", False)
     create_border()
+
+def create_yearstamp():
+    global direction_factor
+    shift_x = 0 * direction_factor
+    file_yearstamp = "../db/yearstamp.csv"
+    yearstamp = pd.read_csv(file_yearstamp, encoding='utf8')
+    print(f"Imported yearstamp: {len(yearstamp)} entries")
+    pdf.set_line_width(0.3)
 
 def render_to_file():
     global pdf, filename

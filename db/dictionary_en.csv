@@ -1,6 +1,6 @@
 key,text,english,notes,verse,tag,checked,date,checked_by
-version,0.6,0.6,,,float,TRUE,2026-06-06,Matthias
-pdf_title,The Promised Offspring,The Promised Offspring,2026-06-06,,text,TRUE,2026-06-06,Matthias
+version,0.7,0.7,,,float,TRUE,2026-06-06,Matthias
+pdf_title,The Promised Offspring,The Promised Offspring,2026-06-12,,text,TRUE,2026-06-06,Matthias
 pdf_subject,Lineage of Jesus,Lineage of Jesus,,,text,TRUE,2026-06-06,Matthias
 Adam,Adam,Adam,,Luke 3:38,bible,TRUE,2026-06-06,Matthias
 Seth,Seth,Seth,,Luke 3:38,bible,TRUE,2026-06-06,Matthias
