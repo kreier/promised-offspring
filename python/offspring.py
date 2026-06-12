@@ -157,13 +157,13 @@ def create_canvas():
     y2 = y1 + drawing_height
 
     # Draw small lines into the corners for the print edition, since print shops import only the
-    # content area and exclude the white space from the desired print area
-    pdf.set_line_width(0.1)
-    pdf.set_draw_color(r=0, g=0, b=0)
-    cornerpoints = [[0.1, 0.1, 1, 1], [page_width - 0.2, 0.1, -1, 1], [0.1, page_height - 0.2, 1, -1], [page_width - 0.2, page_height - 0.2, -1, -1]]
-    for [x, y, dx, dy] in cornerpoints:
-        pdf.line(x, y, x + 10*dx, y)
-        pdf.line(x, y, x, y + 10*dy)
+    # content area and exclude the white space from the desired print area  -----   deactivated 2026/06/13
+    # pdf.set_line_width(0.1)
+    # pdf.set_draw_color(r=0, g=0, b=0)
+    # cornerpoints = [[0.1, 0.1, 1, 1], [page_width - 0.2, 0.1, -1, 1], [0.1, page_height - 0.2, 1, -1], [page_width - 0.2, page_height - 0.2, -1, -1]]
+    # for [x, y, dx, dy] in cornerpoints:
+    #     pdf.line(x, y, x + 10*dx, y)
+    #     pdf.line(x, y, x, y + 10*dy)
 
     # import features of the supported language into dataframe supported_language
     df = pd.read_csv("../db/supported_languages.csv", encoding='utf8')
@@ -481,7 +481,7 @@ def create_page2():
     drawString(dict["legend_covenants"], 10, 10*mm, y_position(30), "r", False)
     pdf.set_text_color(color["red2"][0], color["red2"][1], color["red2"][2])
     drawString(dict["legend_endagerments"], 10, 10*mm, y_position(42), "r", False)
-    # create_border()
+    create_border()
 
 def create_yearstamps(): # =F2*12.5-11.5
     global direction_factor
@@ -495,7 +495,7 @@ def create_yearstamps(): # =F2*12.5-11.5
     for index, row in yearstamp.iterrows():
         x_1 = x_position(row.column)
         y_1 = y_position(row.row)
-        year = row.key
+        year = int(row.key)
         yearstring = str(year) + " " + dict["BCE"]
         if year < 0:
             yearstring = str(-year) + " " + dict["CE"]
@@ -536,6 +536,22 @@ def create_textboxes():
     for index, row in textboxes.iterrows():
         pdf.set_xy(x_position(row.column), y_position(row.row))
         pdf.multi_cell(text=dict[row.key], w=120*mm, align="")
+
+def create_timebars():
+    file_timebars = "../db/timebars.csv"
+    timebars = pd.read_csv(file_timebars, encoding='utf8')
+    file_yearstamp = "../db/yearstamps.csv"
+    yearstamp = pd.read_csv(file_yearstamp, encoding='utf8')    
+    print(f"Imported time bars: {len(timebars)} entries")
+    for index, row in timebars.iterrows():
+        pdf.set_fill_color(color[row.key][0], color[row.key][1], color[row.key][2])
+        x = x_position(row.column)
+        y1 = y_position(yearstamp.loc[yearstamp['key'] == row.start, 'row'].iloc[0])
+        y2 = y_position(yearstamp.loc[yearstamp['key'] == row.end, 'row'].iloc[0])
+        if row.key == "7y" or row.key == "490y":
+            y2 += 12.2
+        # print(f"Creating time bar for {row.key} from start {row.start} at {y1} to {row.end} at {y2}.")
+        pdf.rect(x + 1, y1 - 1, 12, y2 - y1, style="F")
                  
 def render_to_file():
     global pdf, filename
@@ -548,7 +564,7 @@ def create_promised_offspring(lang):
     import_dictionary()
     import_colors()
     create_canvas()
-    create_border()
+    create_border()  # will be deactivated for v1.0
     create_people()
     # include_pictures()
     # include_pictures_svg()
@@ -558,6 +574,7 @@ def create_promised_offspring(lang):
     create_covenants()
     create_endangerments()
     create_textboxes()
+    create_timebars()
     render_to_file()
 
 def checkForValidLanguageCode(langCode):
