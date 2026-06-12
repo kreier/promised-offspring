@@ -174,38 +174,49 @@ legend_covenants,Covenants,Covenants,,,text,TRUE,2026-06-12,Matthias
 legend_endagerments,Possible endangerment to the offspring,Possible endangerment to the offspring,,,text,TRUE,2026-06-12,Matthias
 BCE,B.C.E.,B.C.E.,,,text,TRUE,2026-06-12,Matthias
 CE,C.E.,C.E.,,,text,TRUE,2026-06-12,Matthias
-4026,4026,4026,,,text,,,
-2370,2370,2370,,,text,,,
-2269,2269,2269,,,text,,,
-1943,1943,1943,,,text,,,
-1919,1919,1919,,,text,,,
-1913,1913,1913,,,text,,,
-1728,1728,1728,,,text,,,
-1711,1711,1711,,,text,,,
-1613,1613,1613,,,text,,,
-1600,1600,1600,,,text,,,
-1513,1513,1513,,,text,,,
-1513,1513,1513,,,text,,,
-1473,1473,1473,,,text,,,
-1173,1173,1173,,,text,,,
-1117,1117,1117,,,text,,,
-1077,1077,1077,,,text,,,
-1037,1037,1037,,,text,,,
-1034,1034,1034,,,text,,,
-997,997,997,,,text,,,
-940,940,940,,,text,,,
-632,632,632,,,text,,,
-607,607,607,,,text,,,
-539,539,539,,,text,,,
-537,537,537,,,text,,,
-483,483,483,,,text,,,
-468,468,468,,,text,,,
-455,455,455,,,text,,,
-443,443,443,,,text,,,
-406,406,406,,,text,,,
-331,331,331,,,text,,,
-30,30,30,,,text,,,
-2,2,2,,,text,,,
--29,-29,-29,,,text,,,
--33,-33,-33,,,text,,,
--36,-36,-36,,,text,,,
+4026,,,,,text,TRUE,2026-06-13,Matthias
+2370,Flood,Flood,,,text,TRUE,2026-06-13,Matthias
+2269,Tower of Babel (~2269-2030 BCE); Babylon founded,Tower of Babel (~2269-2030 BCE); Babylon founded,,,text,TRUE,2026-06-13,Matthias
+1943,Crosses Euphrates at 75 yrs old; 430-year period begins,Crosses Euphrates at 75 yrs old; 430-year period begins,,,text,TRUE,2026-06-13,Matthias
+1919,,,,,text,TRUE,2026-06-13,Matthias
+1913,Isaac poked fun at; 400-year affliction begins,Isaac poked fun at; 400-year affliction begins,,,text,TRUE,2026-06-13,Matthias
+1728,Israel's entry into Egpyt,Israel's entry into Egpyt,,,text,TRUE,2026-06-13,Matthias
+1711,,,,,text,TRUE,2026-06-13,Matthias
+1613,Job tried,Job tried,,,text,TRUE,2026-06-13,Matthias
+1600,Egypt attains prominence,Egypt attains prominence,,,text,TRUE,2026-06-13,Matthias
+1513,Moses leads Exodus from Egypt,Moses leads Exodus from Egypt,,,text,TRUE,2026-06-13,Matthias
+1473,Israelites enter Promised Land; Moses dies,Israelites enter Promised Land; Moses dies,,,text,TRUE,2026-06-13,Matthias
+1173,Jephthah begins judging,Jephthah begins judging,,,text,TRUE,2026-06-13,Matthias
+1117,Saul begins rule,Saul begins rule,,,text,TRUE,2026-06-13,Matthias
+1077,David begins rule of Judah (1070 - All Israel),David begins rule of Judah (1070 - All Israel),,,text,TRUE,2026-06-13,Matthias
+1037,Solomon begins rule,Solomon begins rule,,,text,TRUE,2026-06-13,Matthias
+1034,temple construction started,temple construction started,,,text,TRUE,2026-06-13,Matthias
+997,Division of the Kingdom Judah and Israel,Division of the Kingdom Judah and Israel,,,text,TRUE,2026-06-13,Matthias
+940,Assyria attains prominence;subjugates Israel,Assyria attains prominence;subjugates Israel,,,text,TRUE,2026-06-13,Matthias
+632,Babylon attains prominence,Babylon attains prominence,,,text,TRUE,2026-06-13,Matthias
+607,Jerusalem destroyed,Jerusalem destroyed,,,text,TRUE,2026-06-13,Matthias
+539,October 11 Babylon falls (Pivotal Date),October 11 Babylon falls (Pivotal Date),,,text,TRUE,2026-06-13,Matthias
+537,Jews released and repatriated; altar erected; Zerubbabel Governor,Jews released and repatriated; altar erected; Zerubbabel Governor,,,text,TRUE,2026-06-13,Matthias
+483,Esther and Mordecai save Jews,Esther and Mordecai save Jews,,,text,TRUE,2026-06-13,Matthias
+468,Ezra travels to Jerusalem,Ezra travels to Jerusalem,,,text,TRUE,2026-06-13,Matthias
+455,Order to rebuild walls; Nehemiah Governor,Order to rebuild walls; Nehemiah Governor,,,text,TRUE,2026-06-13,Matthias
+443,Nehemiah's 2nd visit to Jerusalem,Nehemiah's 2nd visit to Jerusalem,,,text,TRUE,2026-06-13,Matthias
+406,Jerusalem rebuilt,Jerusalem rebuilt,,,text,TRUE,2026-06-13,Matthias
+331,Greece attains prominence,Greece attains prominence,,,text,TRUE,2026-06-13,Matthias
+30,Rome attains prominence,Rome attains prominence,,,text,TRUE,2026-06-13,Matthias
+2,,,,,text,TRUE,2026-06-13,Matthias
+-29,69th Week; Messiah/Christ appears (Pivotal Date),69th Week; Messiah/Christ appears (Pivotal Date),,,text,TRUE,2026-06-13,Matthias
+-33,"Half-Week; Messiah ""cut-off""; Ransom applied","Half-Week; Messiah ""cut-off""; Ransom applied",,,text,TRUE,2026-06-13,Matthias
+-36,"70th Week; Abrahamic covenant ended, Cornelius","70th Week; Abrahamic covenant ended, Cornelius",,,text,TRUE,2026-06-13,Matthias
+eden,Edenic Promise,Edenic Promise,,,text,TRUE,2026-06-13,Matthias
+noah,Cevenant with Noah,Cevenant with Noah,,,text,TRUE,2026-06-13,Matthias
+rainbow,Raibow Covenant,Raibow Covenant,,,text,TRUE,2026-06-13,Matthias
+abraham,Covenant with Abraham,Covenant with Abraham,,,text,TRUE,2026-06-13,Matthias
+circumcision,Covenant of Circumcision,Covenant of Circumcision,,,text,TRUE,2026-06-13,Matthias
+mosaic,Mosaic Law Covenant,Mosaic Law Covenant,,,text,TRUE,2026-06-13,Matthias
+levi,Covenant with the Tribe of Levi (1512),Covenant with the Tribe of Levi (1512),,,text,TRUE,2026-06-13,Matthias
+israel,Covenant with Israel at Moab,Covenant with Israel at Moab,,,text,TRUE,2026-06-13,Matthias
+david,Covenant with King David,Covenant with King David,,,text,TRUE,2026-06-13,Matthias
+melchizedek,Covenant wto Be a Priest Like Mechizedek,Covenant wto Be a Priest Like Mechizedek,,,text,TRUE,2026-06-13,Matthias
+new,New Covenant,New Covenant,,,text,TRUE,2026-06-13,Matthias
+followers,Jesus’ Covenant with Followers for a Kingdom,Jesus’ Covenant with Followers for a Kingdom,,,text,TRUE,2026-06-13,Matthias
