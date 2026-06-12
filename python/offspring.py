@@ -481,7 +481,7 @@ def create_page2():
     drawString(dict["legend_covenants"], 10, 10*mm, y_position(30), "r", False)
     pdf.set_text_color(color["red2"][0], color["red2"][1], color["red2"][2])
     drawString(dict["legend_endagerments"], 10, 10*mm, y_position(42), "r", False)
-    create_border()
+    # create_border()
 
 def create_yearstamps(): # =F2*12.5-11.5
     global direction_factor
@@ -532,16 +532,11 @@ def create_textboxes():
     file_textboxes = "../db/textboxes.csv"
     textboxes = pd.read_csv(file_textboxes, encoding='utf8')
     print(f"Imported textboxes: {len(textboxes)} entries")
+    pdf.set_text_color(0)
     for index, row in textboxes.iterrows():
-        x = x_position(row.column)
-        y = y_position(row.row)
-        width = row.width
-        height = row.height
-        pdf.set_fill_color(255)
-        pdf.set_draw_color(255)
-        pdf.rect(x, y, width, height, style="FD")
-        drawString(dict[row.key], 10, x + 2, y + 2, "l", False)
-
+        pdf.set_xy(x_position(row.column), y_position(row.row))
+        pdf.multi_cell(text=dict[row.key], w=120*mm, align="")
+                 
 def render_to_file():
     global pdf, filename
     pdf.output(filename)
@@ -562,6 +557,7 @@ def create_promised_offspring(lang):
     create_yearstamps()
     create_covenants()
     create_endangerments()
+    create_textboxes()
     render_to_file()
 
 def checkForValidLanguageCode(langCode):
