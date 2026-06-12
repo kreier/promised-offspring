@@ -123,9 +123,9 @@ def import_dictionary():           # Import strings for the respective language 
 def import_colors():           # Import colors for all keys
     global color
     color = {}
-    print(f"Import colors")
     file_colors = "../db/colors.csv"
     key_colors = pd.read_csv(file_colors, encoding='utf8')
+    print(f"Imported {len(key_colors)} colors")
     for index, row in key_colors.iterrows():
         color.update({f"{row.key}" : (row.R, row.G, row.B)})
 
@@ -472,20 +472,53 @@ def create_timestamp():
 def create_page2(): # ****************************************************************************************************
     global language, language_str, pdf
     pdf.add_page(format=(page_width, page_height))
+    # Add the title of page two right at the beginning
+    pdf.set_text_color(28, 14, 118)
+    pdf.set_font("Aptos-bold", "", 24)
+    drawString(dict["page2_title"], 22, 7*mm, 6*mm, "r", True)
     pdf.set_font(font_regular, "", fontsize_regular)
-    pdf.set_text_color(0)
-    drawString(dict["page2_title"], 18, x_position(14.35), y_position(3), "c", False)
-    drawString(dict["page2_subtitle"], 14, x_position(14.35), y_position(5), "c", False)
-    drawString(dict["page2_text1"], 10, x_position(0.5), y_position(8), "l", False)
+    pdf.set_text_color(color["blue2"][0], color["blue2"][1], color["blue2"][2])
+    drawString(dict["legend_covenants"], 10, 10*mm, y_position(30), "r", False)
+    pdf.set_text_color(color["red2"][0], color["red2"][1], color["red2"][2])
+    drawString(dict["legend_endagerments"], 10, 10*mm, y_position(42), "r", False)
     create_border()
 
-def create_yearstamp():
+def create_yearstamps():
     global direction_factor
     shift_x = 0 * direction_factor
-    file_yearstamp = "../db/yearstamp.csv"
+    file_yearstamp = "../db/yearstamps.csv"
     yearstamp = pd.read_csv(file_yearstamp, encoding='utf8')
-    print(f"Imported yearstamp: {len(yearstamp)} entries")
+    print(f"Imported yearstamps: {len(yearstamp)} entries")
     pdf.set_line_width(0.3)
+    pdf.set_font_size(10)
+    pdf.set_draw_color(0)
+    pdf.set_text_color(0)
+    for index, row in yearstamp.iterrows():
+        x_1 = x_position(row.column)
+        y_1 = y_position(row.row)
+        year = row.key
+        yearstring = str(year) + " " + dict["BCE"]
+        if year < 0:
+            yearstring = str(-year) + " " + dict["CE"]
+        # pdf.line(x_1, y_1, x_1, y_1 + 4)       # vertical line for yearstamp
+        pdf.set_font(font_bold, "", 10)
+        yearstring_width = pdf.get_string_width(yearstring)
+        drawString(yearstring, 10, x_1, y_1, "r", True)
+        pdf.set_font(font_regular, "", 10)
+        drawString(dict[str(year)], 10, x_1 + yearstring_width, y_1, "r", True) 
+
+def create_covenants():
+    file_covenants = "../db/covenants.csv"
+    covenants = pd.read_csv(file_covenants, encoding='utf8')
+    print(f"Imported covenants: {len(covenants)} entries")
+    pdf.set_line_width(0.3)
+    pdf.set_draw_color(0)
+    for index, row in covenants.iterrows():
+        x_1 = x_position(row.column)
+        y_1 = y_position(row.row)
+        year = row.key
+        # pdf.line(x_1, y_1, x_1, y_1 + 4)       # vertical line for covenant
+        drawString(str(year), 10, x_1, y_1, "l", True)
 
 def render_to_file():
     global pdf, filename
@@ -504,6 +537,7 @@ def create_promised_offspring(lang):
     # include_pictures_svg()
     create_timestamp()
     create_page2()
+    create_yearstamps()
     render_to_file()
 
 def checkForValidLanguageCode(langCode):
