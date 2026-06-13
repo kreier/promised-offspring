@@ -82,7 +82,7 @@ The Hebrew word used for **seed** can also mean **offspring**. But in English th
 
 The large A0 project from 2005 was mentioned above. With a double-sided A3 paper I have the area of A2, only 25% of the 2005 project. But I got the lineage of Jesus in, all 12 tribes and 12 judges, many woman in the geneaology and the line of high priests. The entire content of the right column fits on the backside. Even when printed out in only 70% on A4 the information is still good readable. In comparison, it would look like this:
 
-<img src="history/latest.jpg" width="20%"><img src="history/promised_seed_2005.png" width="58%"><img src="history/2026-06-01_promised_seed_page2.png" width="20%">
+<img src="history/latest.jpg" width="20%"><img src="history/promised_seed_2005.png" width="58%"><img src="history/page2.jpg" width="20%">
 
 ### June 2026
 
