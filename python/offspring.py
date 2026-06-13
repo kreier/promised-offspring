@@ -535,9 +535,9 @@ def create_textboxes():
     pdf.set_text_color(0)
     for index, row in textboxes.iterrows():
         pdf.set_xy(x_position(row.column), y_position(row.row))
-        pdf.multi_cell(text=dict[row.key], w=120*mm, align="")
+        pdf.multi_cell(text=dict[row.key], w=120*mm, align="") # 2026/06/13 120mm
 
-def create_timebars():
+def create_timebars(): # right value 138mm and 287mm, width 14pt or 14/2.834645669 = 4.94mm
     file_timebars = "../db/timebars.csv"
     timebars = pd.read_csv(file_timebars, encoding='utf8')
     file_yearstamp = "../db/yearstamps.csv"
@@ -551,7 +551,11 @@ def create_timebars():
         if row.key == "7y" or row.key == "490y":
             y2 += 12.2
         # print(f"Creating time bar for {row.key} from start {row.start} at {y1} to {row.end} at {y2}.")
-        pdf.rect(x + 1, y1 - 1, 12, y2 - y1, style="F")
+        # 
+        pdf.rect(x + 1, y1 - 1, 14, y2 - y1, style="F")
+        with pdf.rotation(angle=90, x=x + 7, y=y1 + (y2 - y1) / 2):
+            pdf.set_xy(x + 7, y1 + (y2 - y1) / 2 - 4)
+            pdf.cell(text=dict[row.key], align="X")
                  
 def render_to_file():
     global pdf, filename
