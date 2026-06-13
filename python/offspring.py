@@ -7,7 +7,7 @@ import googletrans # it works again with v4.0.2 since 2024-11-20 that should fix
 import datetime, sys, os, asyncio, qrcode
 
 # Some general settings for this A3 version
-version  = 0.6
+version  = 0.7
 language = "en"
 language_str = "English"
 color_scheme = "normal"
@@ -31,16 +31,20 @@ if os.getcwd()[-6:] != "python":
     print("This script must be executed inside the python folder.")
     exit()
 
-def x_position(column):      # we have 287 mm vertically for 28.7 columns of 1 cm width
+def x_position(column):      # we have 287 mm vertically for 28.7 columns of 1 cm width - middle 14.35
     global x1, left_to_right
     if left_to_right:
         return x1 + (column * 10*mm)
     else:
         return x1 + (28.7 - column) * 10*mm
 
-def y_position(row_y):           # with update 2025/11/29 to height 14 pt
+# position 2025/11/11: 95 rows with 12 pt height, text 10 pt, so 1 pt above and below
+# position 2025/11/29: 85 rows with 14 pt height, text 10 pt, so 2 pt above and below
+# position 2026/06/12: row is now pt directly, just multiply your values by 14
+
+def y_position(row_y): 
     global y1
-    return y1 + row_y * 14       # vertically centered 10 point script in 14 pt line, 2 pt above/below
+    return y1 + row_y 
 
 def drawString(text, fontsize, x_string, y_string, position, white_background):
     global pdf
@@ -119,9 +123,9 @@ def import_dictionary():           # Import strings for the respective language 
 def import_colors():           # Import colors for all keys
     global color
     color = {}
-    print(f"Import colors")
     file_colors = "../db/colors.csv"
     key_colors = pd.read_csv(file_colors, encoding='utf8')
+    print(f"Imported {len(key_colors)} colors")
     for index, row in key_colors.iterrows():
         color.update({f"{row.key}" : (row.R, row.G, row.B)})
 
@@ -153,13 +157,13 @@ def create_canvas():
     y2 = y1 + drawing_height
 
     # Draw small lines into the corners for the print edition, since print shops import only the
-    # content area and exclude the white space from the desired print area
-    pdf.set_line_width(0.1)
-    pdf.set_draw_color(r=0, g=0, b=0)
-    cornerpoints = [[0.1, 0.1, 1, 1], [page_width - 0.2, 0.1, -1, 1], [0.1, page_height - 0.2, 1, -1], [page_width - 0.2, page_height - 0.2, -1, -1]]
-    for [x, y, dx, dy] in cornerpoints:
-        pdf.line(x, y, x + 10*dx, y)
-        pdf.line(x, y, x, y + 10*dy)
+    # content area and exclude the white space from the desired print area  -----   deactivated 2026/06/13
+    # pdf.set_line_width(0.1)
+    # pdf.set_draw_color(r=0, g=0, b=0)
+    # cornerpoints = [[0.1, 0.1, 1, 1], [page_width - 0.2, 0.1, -1, 1], [0.1, page_height - 0.2, 1, -1], [page_width - 0.2, page_height - 0.2, -1, -1]]
+    # for [x, y, dx, dy] in cornerpoints:
+    #     pdf.line(x, y, x + 10*dx, y)
+    #     pdf.line(x, y, x, y + 10*dy)
 
     # import features of the supported language into dataframe supported_language
     df = pd.read_csv("../db/supported_languages.csv", encoding='utf8')
@@ -365,6 +369,7 @@ def create_people():
             drawString(str(int(row.sup_r)), 4, x + 0.5 * text_width + 1, y + 0.7, "r", False)
         if pd.isna(row.sub_r) == False:
             drawString(str(int(row.sub_r)), 4, x + 0.5 * text_width, y + 4.7, "r", False)
+    pdf.set_dash_pattern(dash=0, gap=0)  # back to SOLID line
 
 def include_pictures():
     global font_regular, direction, pdf
@@ -422,7 +427,7 @@ def create_qr_code(qr_file, language):
 
 def create_timestamp():
     qr_x = 28.66
-    qr_y = 0.1
+    qr_y = 1.4
     pdf.set_font("Aptos", "", 4)
     pdf.set_text_color(50)
     pdf.set_text_shaping(use_shaping_engine=True, language="eng")
@@ -450,33 +455,108 @@ def create_timestamp():
     dateindex = timestamp[2:4] + timestamp[5:7] + timestamp[8:10]
     rotation_angle = 90
     # rotation_y = y_position(qr_y + 0.1)
-    rotation_y = y_position(qr_y + 0.1) - qr_size * 0.94
+    rotation_y = y_position(qr_y + 1.4) - qr_size * 0.94
     if left_to_right:
         rotation_angle = -90
         rotation_y += qr_size * 0.94
     with pdf.rotation(angle=rotation_angle, x=x_position(qr_x), y=rotation_y):
-        pdf.set_xy(x_position(qr_x), y_position(qr_y + 0.2) + qr_size * (1.47 - 0.47 * direction_factor))
+        pdf.set_xy(x_position(qr_x), y_position(qr_y + 2.8) + qr_size * (1.47 - 0.47 * direction_factor))
         pdf.cell(text="promised-offspring " + language)
-        pdf.set_xy(x_position(qr_x), y_position(qr_y + 0.58) + qr_size * (1.47 - 0.47 * direction_factor))
+        pdf.set_xy(x_position(qr_x), y_position(qr_y + 8.128) + qr_size * (1.47 - 0.47 * direction_factor))
         pdf.cell(text=dateindex)
     # And finally the name of this project into the top left corner
     pdf.set_text_color(28, 14, 118)
     pdf.set_font("Aptos-bold", "", 24)
     drawString(dict["pdf_title"], 22, 7*mm, 6*mm, "r", True)
 
-def create_page2():
+def create_page2(): 
     global language, language_str, pdf
     pdf.add_page(format=(page_width, page_height))
+    # Add the title of page two right at the beginning
+    pdf.set_text_color(28, 14, 118)
+    pdf.set_font("Aptos-bold", "", 24)
+    drawString(dict["page2_title"], 22, 7*mm, 6*mm, "r", True)
     pdf.set_font(font_regular, "", fontsize_regular)
-    pdf.set_text_color(0)
-    drawString(dict["page2_title"], 18, x_position(14.35), y_position(3), "c", False)
-    drawString(dict["page2_subtitle"], 14, x_position(14.35), y_position(5), "c", False)
-    drawString(dict["page2_text1"], 10, x_position(0.5), y_position(8), "l", False)
-    drawString(dict["page2_text2"], 10, x_position(0.5), y_position(10), "l", False)
-    drawString(dict["page2_text3"], 10, x_position(0.5), y_position(12), "l", False)
-    drawString(dict["page2_text4"], 10, x_position(0.5), y_position(14), "l", False)
+    pdf.set_text_color(color["blue2"][0], color["blue2"][1], color["blue2"][2])
+    drawString(dict["legend_covenants"], 10, 10*mm, y_position(30), "r", False)
+    pdf.set_text_color(color["red2"][0], color["red2"][1], color["red2"][2])
+    drawString(dict["legend_endagerments"], 10, 10*mm, y_position(42), "r", False)
     create_border()
 
+def create_yearstamps(): # =F2*12.5-11.5
+    global direction_factor
+    shift_x = 0 * direction_factor
+    file_yearstamp = "../db/yearstamps.csv"
+    yearstamp = pd.read_csv(file_yearstamp, encoding='utf8')
+    print(f"Imported yearstamps: {len(yearstamp)} entries")
+    pdf.set_line_width(0.3)
+    pdf.set_font_size(10)
+    pdf.set_text_color(0)
+    for index, row in yearstamp.iterrows():
+        x_1 = x_position(row.column)
+        y_1 = y_position(row.row)
+        year = int(row.key)
+        yearstring = str(year) + " " + dict["BCE"]
+        if year < 0:
+            yearstring = str(-year) + " " + dict["CE"]
+        if row.approx:
+            yearstring = "~ " + yearstring
+        pdf.set_font(font_bold, "", 10)
+        yearstring_width = pdf.get_string_width(yearstring)
+        drawString(yearstring, 10, x_1, y_1, "r", True)
+        pdf.set_font(font_regular, "", 10)
+        drawString(dict[str(year)], 10, x_1 + yearstring_width + 3, y_1, "r", True)
+        if row.line:
+            pdf.set_draw_color(0)
+            pdf.line(x_1, y_1 - 1, x_1 + 137*mm, y_1 - 1)
+    pdf.set_draw_color(0)
+    pdf.line(x_1, y_1 + 11, x_1 + 137*mm, y_1 + 11)
+
+def create_covenants():
+    file_covenants = "../db/covenants.csv"
+    covenants = pd.read_csv(file_covenants, encoding='utf8')
+    print(f"Imported covenants: {len(covenants)} entries")
+    pdf.set_text_color(color["blue2"][0], color["blue2"][1], color["blue2"][2])
+    for index, row in covenants.iterrows():
+        drawString(dict[row.key], 10, x_position(row.column), y_position(row.row), "r", False)
+
+def create_endangerments():
+    file_endangerments = "../db/endangerments.csv"
+    endangerments = pd.read_csv(file_endangerments, encoding='utf8')
+    print(f"Imported endangerments: {len(endangerments)} entries")
+    pdf.set_text_color(color["red2"][0], color["red2"][1], color["red2"][2])
+    for index, row in endangerments.iterrows():
+        drawString(dict[row.key], 10, x_position(row.column), y_position(row.row), "r", False)
+
+def create_textboxes():
+    file_textboxes = "../db/textboxes.csv"
+    textboxes = pd.read_csv(file_textboxes, encoding='utf8')
+    print(f"Imported textboxes: {len(textboxes)} entries")
+    pdf.set_text_color(0)
+    for index, row in textboxes.iterrows():
+        pdf.set_xy(x_position(row.column), y_position(row.row))
+        pdf.multi_cell(text=dict[row.key], w=120*mm, align="") # 2026/06/13 120mm
+
+def create_timebars(): # right value 138mm and 287mm, width 14pt or 14/2.834645669 = 4.94mm
+    file_timebars = "../db/timebars.csv"
+    timebars = pd.read_csv(file_timebars, encoding='utf8')
+    file_yearstamp = "../db/yearstamps.csv"
+    yearstamp = pd.read_csv(file_yearstamp, encoding='utf8')    
+    print(f"Imported time bars: {len(timebars)} entries")
+    for index, row in timebars.iterrows():
+        pdf.set_fill_color(color[row.key][0], color[row.key][1], color[row.key][2])
+        x = x_position(row.column)
+        y1 = y_position(yearstamp.loc[yearstamp['key'] == row.start, 'row'].iloc[0])
+        y2 = y_position(yearstamp.loc[yearstamp['key'] == row.end, 'row'].iloc[0])
+        if row.key == "7y" or row.key == "490y":
+            y2 += 12.2
+        # print(f"Creating time bar for {row.key} from start {row.start} at {y1} to {row.end} at {y2}.")
+        # 
+        pdf.rect(x + 1, y1 - 1, 14, y2 - y1, style="F")
+        with pdf.rotation(angle=90, x=x + 7, y=y1 + (y2 - y1) / 2):
+            pdf.set_xy(x + 7, y1 + (y2 - y1) / 2 - 4)
+            pdf.cell(text=dict[row.key], align="X")
+                 
 def render_to_file():
     global pdf, filename
     pdf.output(filename)
@@ -488,12 +568,17 @@ def create_promised_offspring(lang):
     import_dictionary()
     import_colors()
     create_canvas()
-    create_border()
+    create_border()  # will be deactivated for v1.0
     create_people()
     # include_pictures()
     # include_pictures_svg()
     create_timestamp()
     create_page2()
+    create_yearstamps()
+    create_covenants()
+    create_endangerments()
+    create_textboxes()
+    create_timebars()
     render_to_file()
 
 def checkForValidLanguageCode(langCode):
