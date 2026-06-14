@@ -1,6 +1,6 @@
 key,text,english,notes,verse,tag,checked,date,checked_by
-version,0.7,0.7,,,float,TRUE,2026-06-06,Matthias
-pdf_title,The Promised Offspring,The Promised Offspring,2026-06-13,,text,TRUE,2026-06-06,Matthias
+version,0.8,0.8,,,float,TRUE,2026-06-06,Matthias
+pdf_title,The Promised Offspring,The Promised Offspring,2026-06-14,,text,TRUE,2026-06-06,Matthias
 pdf_subject,Lineage of Jesus,Lineage of Jesus,,,text,TRUE,2026-06-06,Matthias
 Adam,Adam,Adam,,Luke 3:38,bible,TRUE,2026-06-06,Matthias
 Seth,Seth,Seth,,Luke 3:38,bible,TRUE,2026-06-06,Matthias
@@ -277,3 +277,5 @@ isaiah_text,"(Isaiah 11:1, 10) And there must go forth a twig out of the stump o
 49y,49,49,,,text,TRUE,2026-06-13,Matthias
 434y,434 years,434 years,,,text,TRUE,2026-06-13,Matthias
 7y,7 years,7 years,,,text,TRUE,2026-06-13,Matthias
+Ham,Ham,Ham,,Genesis 9:18,bible,TRUE,2026-06-14,Matthias
+Japheth,Jaʹpheth,Japheth,,Genesis 9:18,bible,TRUE,2026-06-14,Matthias
