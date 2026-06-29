@@ -7,7 +7,7 @@ import googletrans # it works again with v4.0.2 since 2024-11-20 that should fix
 import datetime, sys, os, asyncio, qrcode
 
 # Some general settings for this A3 version
-version  = 0.7
+version  = 0.8
 language = "en"
 language_str = "English"
 color_scheme = "normal"
@@ -218,81 +218,6 @@ def create_border():
     pdf.line(x1 + page_width - 2 * border_lr, y1, x1 + page_width - 2 * border_lr, y2)
 
 
-def draw_event(text, date, ys, ye, yt, wl, pos):
-    global fontsize_regular, pdf
-    if not left_to_right:
-        if pos == "l":
-            pos = "r"
-        else:
-            pos = "l"
-    x_line = x_position(date)
-    x_txt  = x_line + 4
-    y_txt  = y_position(yt) - 9
-    x_add  = 2
-    if pos == "l":
-        x_txt = x_line - 4
-        x_add = -x_add
-    pdf.set_text_color(0)
-    pdf.set_font(font_regular, "", fontsize_regular)
-    drawString(dict[text], fontsize_regular, x_txt, y_txt, pos, True)
-    pdf.set_line_width(wl)
-    pdf.set_draw_color(20, 20, 30)
-    pdf.set_fill_color(0)
-    pdf.line(x_line, y_position(ys) - 1, x_line, y_position(ye) - 1)
-    points = ((x_line, y_txt + 3), (x_line + x_add, y_txt + 5), (x_line, y_txt + 7))
-    pdf.polygon(points, style="DF")
-
-def create_reference_events():
-    # Deluge in 2370 BCE is special and included in the Adam_Moses part
-    global counter_events
-    file_events = "../db/events.csv"
-    events = pd.read_csv(file_events, encoding='utf8')
-    print("Imported data of reference events:", len(events))
-    for index, row in events.iterrows():
-        draw_event(row.key, row.date, row.y_start, row.y_end, row.y_text, row.width, row.position)
-        counter_events += 1
-
-def create_events_objects():
-    global counter_objects
-    items = pd.read_csv("../db/events_objects.csv", encoding='utf8')
-    for index, row in items.iterrows():
-        draw_event(row.key, row.date, row.y_start, row.y_end, row.y_text, row.width, row.position)
-        counter_objects += 1
-
-
-def faded_color(red, green, blue, percent):
-    return [1 - percent * (1 - red), 1 - percent * (1 - green), 1 - percent * (1 - blue)]
-
-def timebar(x, y, width, R, G, B, exact):
-    pdf.set_fill_color(R*255, G*255, B*255)
-    if width < 0:
-        x += width
-        width = -width
-    pdf.rect(x, y, width, 4, style="F")
-    if exact:
-        return
-    fade_steps = 35
-    for i in range(fade_steps):
-        co = faded_color(R, G, B, (i+1)/fade_steps)
-        pdf.set_fill_color(co[0]*255, co[1]*255, co[2]*255)
-        pdf.rect(x + 3 * i/fade_steps - 0.1,   y, 1, 4, style="F")
-        pdf.rect(x + width - 3 * i/fade_steps, y, 1, 4, style="F")
-
-def text_with_timebar(text, row, year_start, year_end, R, G, B, exact):
-    global fontsize_regular, direction
-    x_box = x_position(year_start)
-    y_box = y_position(row) - 9
-    x_boxwidth = x_position(year_end) - x_position(year_start)    
-    timebar(x_box, y_box - 6, x_boxwidth, R, G, B, exact)
-    drawString(text, fontsize_regular, x_box, y_box, direction, True)
-
-
-
-
-
-
-
-
 def create_people():
     global direction_factor
     shift_x = 0 * direction_factor
@@ -306,7 +231,8 @@ def create_people():
     distant_children = pd.read_csv(file_distant_children, encoding='utf8')  # distant children connected to parents with gray lines
     print(f"Imported family tree of Jesus: {len(people)} text fields")
     pdf.set_line_width(1.0)
-    pdf.set_draw_color(13, 155, 13)
+    pdf.set_draw_color(13, 155, 13) # This was green
+    pdf.set_draw_color(color["blue"])    
     print(f"Create lines for {len(married)} married couples.")
     for index, row in married.iterrows():
         # print(f"Married couple: {row.husband} and {row.wife}")
@@ -352,9 +278,11 @@ def create_people():
         pdf.set_fill_color(255)
         pdf.set_draw_color(255)
         pdf.rect(x - 0.5 * text_width - 1, y, text_width + 2, 10, style = "FD")
-        pdf.set_text_color(blue[0], blue[1], blue[2])
+        pdf.set_text_color(blue[0], blue[1], blue[2])   # default color is blue for male
         if row.color == "red":
-            pdf.set_text_color(red[0], red[1], red[2])
+            pdf.set_text_color(red[0], red[1], red[2])  # red for female
+        if row.color == "green":
+            pdf.set_text_color(color["green"])  # green for high priests
         if row.color == "byzantium":
             pdf.set_text_color(byzantium[0], byzantium[1], byzantium[2])
         drawString(dict[row.key], 10, x, y, "c", False)
