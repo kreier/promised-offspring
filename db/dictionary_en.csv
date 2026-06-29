@@ -121,7 +121,7 @@ Azor,Aʹzor,Azor,,Matthew 1:13,bible,TRUE,2026-06-06,Matthias
 Zadok,Zaʹdok,Zadok,,Matthew 1:14,bible,TRUE,2026-06-06,Matthias
 Achim,Aʹchim,Achim,,Matthew 1:14,bible,TRUE,2026-06-06,Matthias
 Eliud,E·liʹud,Eliud,,Matthew 1:14,bible,TRUE,2026-06-06,Matthias
-Eleazar,El·e·aʹzar,Eleazar,,Matthew 1:15,bible,TRUE,2026-06-06,Matthias
+Eleazar,El·e·aʹzar,Eleazar,son of Eliud,Matthew 1:15,bible,TRUE,2026-06-06,Matthias
 Matthan,Matʹthan,Matthan,,Matthew 1:15,bible,TRUE,2026-06-06,Matthias
 Jacob,Jacob,Jacob,,Matthew 1:15,bible,TRUE,2026-06-06,Matthias
 Joseph,Joseph,Joseph,,Matthew 1:16,bible,TRUE,2026-06-06,Matthias
@@ -279,3 +279,54 @@ isaiah_text,"(Isaiah 11:1, 10) And there must go forth a twig out of the stump o
 7y,7 years,7 years,,,text,TRUE,2026-06-13,Matthias
 Ham,Ham,Ham,,Genesis 9:18,bible,TRUE,2026-06-14,Matthias
 Japheth,Jaʹpheth,Japheth,,Genesis 9:18,bible,TRUE,2026-06-14,Matthias
+Kohath,Kohath,Kohath,,,bible,FALSE,,
+Amran,Amran,Amran,,,bible,FALSE,,
+Moses,Moses,Moses,,,bible,FALSE,,
+Aaron,Aaron,Aaron,,,bible,FALSE,,
+Miriam,Miriam,Miriam,,,bible,FALSE,,
+Eleazar2,El·e·aʹzar,Eleazar,son of Aaron,,bible,FALSE,,
+Phinehas,Phinehas,Phinehas,,,bible,FALSE,,
+Abishua,Abishua(?),Abishua(?),,,bible,FALSE,,
+Bukki,Bukki(?),Bukki(?),,,bible,FALSE,,
+Uzzi,Uzzi(?),Uzzi(?),,,bible,FALSE,,
+Eli,Eli,Eli,,,bible,FALSE,,
+Hophni,Hophni,Hophni,,,bible,FALSE,,
+Phinehas2,Phinehas,Phinehas,,,bible,FALSE,,
+Ahitub,Ahitub(?),Ahitub(?),,,bible,FALSE,,
+Ahijah,Ahijah,Ahijah,,,bible,FALSE,,
+Ahimelech,Ahimelech,Ahimelech,,,bible,FALSE,,
+Zerahiah,Zerahiah,Zerahiah,son of Uzzi(?),,bible,FALSE,,
+Meraioth,Meraioth,Meraioth,,,bible,FALSE,,
+Azariah,Azariah,Azariah,,,bible,FALSE,,
+Amariah,Amariah,Amariah,,,bible,FALSE,,
+Ahitub2,Ahitub,Ahitub,,,bible,FALSE,,
+Abiathar,Abiathar,Abiathar,,,bible,FALSE,,
+Jonathan2,Jonathan,Jonathan,,,bible,FALSE,,
+Ahimelech2,Ahimelech,Ahimelech,,,bible,FALSE,,
+Zadok2,Zadok,Zadok,,,bible,FALSE,,
+Ahimaaz,Ahimaaz(?),Ahimaaz(?),,,bible,FALSE,,
+Azariah_I,Azariah I,Azariah I,,,bible,FALSE,,
+Amariah,Amariah,Amariah,,,bible,FALSE,,
+Jehoiada,Jehoiada,Jehoiada,,,bible,FALSE,,
+Jehosheba,Jehosheba,Jehosheba,,,bible,FALSE,,
+Zechariah,Zechariah(?),Zechariah(?),,,bible,FALSE,,
+Johanan,Johanan(?),Johanan(?),,,bible,FALSE,,
+Azariah_II,Azariah II,Azariah II,,,bible,FALSE,,
+Urijah,Urijah(?),Urijah(?),,,bible,FALSE,,
+Azariah_III,Azariah III,Azariah III,,,bible,FALSE,,
+Amariah2,Amariah(?),Amariah(?),,,bible,FALSE,,
+Ahitub3,Ahitub,Ahitub,,,bible,FALSE,,
+Meraioth,Meraioth(?),Meraioth(?),,,bible,FALSE,,
+Zadok3,Zadok(?),Zadok(?),,,bible,FALSE,,
+Schallum,Schallum(?),Schallum(?),,,bible,FALSE,,
+Hilkiah,Hilkiah,Hilkiah,,,bible,FALSE,,
+Azariah_IV,Azariah IV(?),Azariah IV(?),,,bible,FALSE,,
+Seraiah,Seraiah,Seraiah,,,bible,FALSE,,
+Jehozadak,Jehozadak(?),Jehozadak(?),,,bible,FALSE,,
+Joshua_Jeshua,Joshua(Jeshua),Joshua(Jeshua),,"Nehemiah 12:10,11",bible,FALSE,,
+Joiakim,Joiakim(?),Joiakim(?),,"Nehemiah 12:10,11",bible,FALSE,,
+Eliashib,Eliashib,Eliashib,,"Nehemiah 12:10,11",bible,FALSE,,
+Joiada,Joiada(?),Joiada(?),,"Nehemiah 12:10,11",bible,FALSE,,
+Johanan2,Johanan,Johanan,,"Nehemiah 12:10,11",bible,FALSE,,
+Jaddua,Jaddua(?),Jaddua(?),,"Nehemiah 12:10,11",bible,FALSE,,
+Ezra,Ezra,Ezra,,,,,,

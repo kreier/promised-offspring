@@ -7,7 +7,7 @@ import googletrans # it works again with v4.0.2 since 2024-11-20 that should fix
 import datetime, sys, os, asyncio, qrcode
 
 # Some general settings for this A3 version
-version  = 0.7
+version  = 0.8
 language = "en"
 language_str = "English"
 color_scheme = "normal"
@@ -231,7 +231,8 @@ def create_people():
     distant_children = pd.read_csv(file_distant_children, encoding='utf8')  # distant children connected to parents with gray lines
     print(f"Imported family tree of Jesus: {len(people)} text fields")
     pdf.set_line_width(1.0)
-    pdf.set_draw_color(13, 155, 13)
+    pdf.set_draw_color(13, 155, 13) # This was green
+    pdf.set_draw_color(color["blue"])    
     print(f"Create lines for {len(married)} married couples.")
     for index, row in married.iterrows():
         # print(f"Married couple: {row.husband} and {row.wife}")
@@ -277,9 +278,11 @@ def create_people():
         pdf.set_fill_color(255)
         pdf.set_draw_color(255)
         pdf.rect(x - 0.5 * text_width - 1, y, text_width + 2, 10, style = "FD")
-        pdf.set_text_color(blue[0], blue[1], blue[2])
+        pdf.set_text_color(blue[0], blue[1], blue[2])   # default color is blue for male
         if row.color == "red":
-            pdf.set_text_color(red[0], red[1], red[2])
+            pdf.set_text_color(red[0], red[1], red[2])  # red for female
+        if row.color == "green":
+            pdf.set_text_color(color["green"])  # green for high priests
         if row.color == "byzantium":
             pdf.set_text_color(byzantium[0], byzantium[1], byzantium[2])
         drawString(dict[row.key], 10, x, y, "c", False)
