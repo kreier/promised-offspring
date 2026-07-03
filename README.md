@@ -3,22 +3,22 @@
 ![GitHub Release](https://img.shields.io/github/v/release/kreier/promised-offspring)
 ![GitHub License](https://img.shields.io/github/license/kreier/promised-offspring)
 
-Visualizing the lineage of Jesus, starting with Adam and connecting families and prophecies. Latest versions:
+Visualizing the lineage of Jesus, starting with Adam and connecting families and prophecies. [Github repository](https://github.com/kreier/promised-offspring/) Latest versions:
 
 - [English version](latest/en.pdf)
 - [German version](latest/de.pdf)
 
 ## Motivation
 
-For people of Israel 2000 years ago it was of big importance to trace their family back in a genealogy. This was important to have a part in inherited land, or enjoy certain privileges. For example, after the exile in Babylon the families of _Habaiah_, _Hakkoz_, and _Barzillai_ who could not find their genealogical records. (Ezra 2:61-63, Nehemiah 7:63-65) Because they could not prove their lineage, they were excluded from the priesthood and forbidden to eat the sacred food until a priest could determine their status using the Urim and Thummim.
+**Historic background:** For people of Israel 2000 years ago it was of big importance to trace back their family in a genealogy. This was important if you want to have a part in inherited land, or enjoy certain privileges. For example, after the exile in Babylon the families of _Habaiah_, _Hakkoz_, and _Barzillai_ who could not find their genealogical records. (Ezra 2:61-63, Nehemiah 7:63-65) Because they could not prove their lineage, they were excluded from the priesthood and forbidden to eat the sacred food until a priest could determine their status using the Urim and Thummim.
 
 <img src="history/1x1.png" width="5%"><img src="history/latest.jpg" width="40%"><img src="history/1x1.png" width="5%"> <img src="history/promised_seed_2005.png" width="44%">
 
-Of even greater importance was the lineage of the promised Messiah. He needed to be a son of Abraham, Judah and David. Therefore both Matthew and Luke include a geneaology of Jesus Christ. But if you look at them, you will find some differences. The more details one unveils, the more interesting and connected to world history this lineage becomes. Hence this project to condense and visualize some findings of this study. But first we have to think about size:
+Of even greater importance was the lineage of the **promised Messiah**. He needed to be a son of **Abraham**, **Judah** and **David**. Therefore both Matthew and Luke include a geneaology of Jesus Christ. But if you look at them, you will find some differences. The more details one unveils, the more interesting and connected to world history this lineage becomes. Hence this project to condense and visualize some findings of this study of the geneaology of Jesus. But first we have to think about size:
 
-## Size consideration
+## Size consideration - at least A3
 
-In many digital documents you can zoom in 600%, with Affinity even more. But my goal was a possible printout, and this generates tangable constrains. I tested font sizes and consider 10 pt still to be good readable. The standard line distance is then 12 pt. So how many lines or rows are necessary?
+In many digital documents you can zoom in 600%, with Affinity even more. But my goal was a possible printout, and this generates tangable constrains. I tested font sizes and consider **10 pt** still to be good readable. The standard line distance is then 12 pt. So how many lines or rows are necessary?
 
 ### Account of Luke in 12 pt
 
@@ -36,7 +36,7 @@ The account of Luke lists 75 individuals. If we put each father in one line, we 
 
 Matthew only begins with Abraham and describes the paternal or legal side of Jesus lineage. It includes many kings of Judah and has in total 40 persons. The account of Luke starts with Adam and has therefore 20 more names. From Zerubbabel the lineage is significantly longer (20 instead of 11 individuals) and concludes after 75 generations. Another project includes many more extra lines for other children and relatives. This requires an estimated 112 lines for all the information.
 
-One point is 0.3528 millimeter large. 12 points equals 4.23 millimeter and 75 lines require 317.52 millimeter. A4 portrait has a height of 297 mm, A3 has 420 mm.
+One point is 0.3528 millimeter large. 12 points equals 4.23 millimeter and 75 lines require 317.52 millimeter. A4 portrait has a height of 297 mm, A3 has 420 mm. So with a font size of 10pt and line height of 12pt you need at least A3.
 
 ### Extra space for parent - children lines
 
@@ -50,17 +50,17 @@ I want to include some extra lines to connect parents to their childen. With jus
 |         85        | 299.88 | 359.86 | 419.83 | 479.81 |
 |        112        | 395.14 | 474.16 | 553.19 | 632.22 |
 
-The new 14 pt line height is good for 85 lines. But we need only 75 for the geneaology of the promised offspring. This leaves room to move content further down if I want to insert some interesting details.
+The new 14 pt line height is good for 85 lines. But we need only 75 for the geneaology of the promised offspring. This leaves room to move content further down if I want to insert some interesting details. For A3 I have space for 85 lines, some 10 extra lines or space.
 
-## History of this "The Promised Seed" repository
+## History of this "The Promised Offspring" repository - it started as "promised seed"
 
-The motivation came from my old [timeline project](https://github.com/kreier/timeline) here on GitHub, that actually started with some curated HTML files in 2006. Over time it grew to a detailed chart of human history for the last 6000 years. From paper versions, html, OpenOffice spreadsheets, OpenOffice vector drawings to finally a Python program generated PDF of 1208x210 mm (or four A4 papers in landscape).
+My motivation came from my old [timeline project](https://github.com/kreier/timeline) here on GitHub, that actually started with some curated HTML files in 2006. Over time it grew to a detailed chart of human history for the last 6000 years. From paper versions, html, OpenOffice spreadsheets, OpenOffice vector drawings to finally a Python program generated PDF of 1208x210 mm (or four A4 papers in landscape).
 
-About the same time others started a related project, but focused on the lineage of Jesus and historic events related to "the promised seed". Their project has the size of 864x1118 mm (34x44 inch) and was created 2002-2005. Its final version looks like this:
+About the same time others started a related project, but focused on the lineage of Jesus and historic events related to "the promised seed". Their project has the size of 864x1118 mm (34x44 inch) and was created 2002-2005. Its final version (build 200507021) looks like this:
 
 <img src="history/1x1.png" width="20%"><img src="history/promised_seed_2005.png" width="60%">
 
-I had heard about this project since 2023, and in 2025 I got a digital copy. But it is not intended to be shared online. Therefore there is only a rather fuzzy image embedded in this repository. 
+I heard about this project 2023, and in 2025 I got a digital copy from someone that knows the authors. But it is not intended to be shared online or at all. Therefore there is only a rather fuzzy image embedded in this repository.
 
 ### November 2025 - Repository for "promised-seed"
 
@@ -89,6 +89,8 @@ The large A0 project from 2005 was mentioned above. With a double-sided A3 paper
 Planned updates:
 
 - red/purple line of Aarons descendants as levites/priests to the first century
+
+After I printed v0.8 on A3 I had the idea to recreate this document as A2 document. Vertically I would have 10 lines of extra space for further information, or families to squeeze in. But horizontally I would have almost 70% of the width of the A0 reference project. One challenging aspect is couples, where you have two names (wife and husband) next to one another. Even the reference document stacked them sometimes on different lines - not easy to follow. How much can I cramp in? Let's see!
 
 ### Additional content from the reference map
 
